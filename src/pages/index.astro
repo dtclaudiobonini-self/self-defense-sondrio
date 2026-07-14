@@ -21,7 +21,17 @@ const anno = new Date().getFullYear();
 
   <body>
     <header>
-      <div class="logo">SELF DEFENSE SONDRIO</div>
+      <a class="logo" href="/" aria-label="Self Defense Sondrio - Home">
+
+  <img
+
+    src="/images/logo-self-defense-sondrio.png"
+
+    alt="Logo Self Defense Sondrio ASD"
+
+  />
+
+</a>
 
       <nav>
         <a href="#chi-siamo">Chi siamo</a>
@@ -151,11 +161,25 @@ const anno = new Date().getFullYear();
     z-index: 10;
   }
 
-  .logo {
-    font-size: 0.95rem;
-    font-weight: 900;
-    letter-spacing: 0.12em;
-  }
+ .logo {
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+}
+
+.logo img {
+
+  display: block;
+
+  width: auto;
+
+  height: 58px;
+
+}
 
   nav {
     display: flex;
@@ -308,6 +332,11 @@ const anno = new Date().getFullYear();
       align-items: flex-start;
       flex-direction: column;
     }
+	.logo img {
+
+  height: 48px;
+
+}
 
     nav {
       gap: 15px;
