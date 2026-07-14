@@ -1,389 +1,92 @@
 ---
-const anno = new Date().getFullYear();
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="it">
-  <head>
-    <meta charset="UTF-8" />
+<Layout
+  title="Self Defense Sondrio ASD"
+  description="Corsi di difesa personale e Krav Maga a Sondrio e Morbegno."
+>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Self Defense Sondrio ASD</p>
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+      <h1>Preparati. Reagisci. Difenditi.</h1>
 
-    <title>Self Defense Sondrio ASD</title>
+      <p class="intro">
+        Corsi di difesa personale e Krav Maga a Sondrio e Morbegno,
+        aperti a principianti e praticanti di ogni livello.
+      </p>
 
-    <meta
-      name="description"
-      content="Corsi di difesa personale e Krav Maga a Sondrio."
-    />
-  </head>
-
-  <body>
-    <header>
-      <a
-        class="logo"
-        href="/"
-        aria-label="Self Defense Sondrio - Home"
-      >
-        <img
-          src="/images/logo-self-defense-sondrio.png"
-          alt="Logo Self Defense Sondrio ASD"
-        />
-
-        <div class="logo-text">
-          <span>SELF DEFENSE</span>
-          <strong>SONDRIO ASD</strong>
-        </div>
-      </a>
-
-      <nav>
-        <a href="#chi-siamo">Chi siamo</a>
-        <a href="#corsi">Corsi</a>
-        <a href="#contatti">Contatti</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">SELF DEFENSE SONDRIO ASD</p>
-
-          <h1>Preparati. Reagisci. Difenditi.</h1>
-
-          <p class="intro">
-            Corsi di difesa personale e Krav Maga a Sondrio e Morbegno,
-            aperti a principianti e praticanti di ogni livello.
-          </p>
-
-          <div class="actions">
-            <a class="button primary" href="#corsi">
-              Scopri i corsi
-            </a>
-
-            <a class="button secondary" href="#contatti">
-              Contattaci
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="chi-siamo" class="section">
-        <p class="section-label">L'associazione</p>
-
-        <h2>Difesa personale concreta e consapevole</h2>
-
-        <p>
-          Self Defense Sondrio ASD promuove corsi di difesa personale,
-          Krav Maga, prevenzione e gestione delle situazioni di pericolo.
-        </p>
-      </section>
-
-      <section id="corsi" class="section dark">
-        <p class="section-label">Attività</p>
-
-        <h2>I nostri corsi</h2>
-
-        <div class="cards">
-          <article class="card">
-            <h3>Krav Maga</h3>
-
-            <p>
-              Tecniche semplici e concrete per affrontare situazioni
-              realistiche.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Difesa personale</h3>
-
-            <p>
-              Prevenzione, gestione dello stress e risposta alle aggressioni.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Corsi per aziende</h3>
-
-            <p>
-              Formazione dedicata a operatori, aziende ed enti pubblici.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contatti" class="section">
-        <p class="section-label">Informazioni</p>
-
-        <h2>Vieni a provare una lezione</h2>
-
-        <p>
-          Stiamo preparando il nuovo sito di Self Defense Sondrio ASD.
-        </p>
-
-        <a
-          class="button primary"
-          href="mailto:info@selfdefensesondrio.it"
-        >
-          Scrivici
+      <div class="actions">
+        <a class="button primary" href="#corsi">
+          Scopri i corsi
         </a>
-      </section>
-    </main>
 
-    <footer>
-      © {anno} Self Defense Sondrio ASD
-    </footer>
-  </body>
-</html>
+        <a class="button secondary" href="#contatti">
+          Contattaci
+        </a>
+      </div>
+    </div>
+  </section>
 
-<style>
-  :global(*) {
-    box-sizing: border-box;
-  }
+  <section id="chi-siamo" class="section">
+    <p class="section-label">L'associazione</p>
 
-  :global(html) {
-    scroll-behavior: smooth;
-  }
+    <h2>Difesa personale concreta e consapevole</h2>
 
-  :global(body) {
-    margin: 0;
-    font-family: Inter, Arial, Helvetica, sans-serif;
-    color: #f5f5f5;
-    background: #0d0d0d;
-    line-height: 1.6;
-  }
+    <p>
+      Self Defense Sondrio ASD promuove corsi di difesa personale,
+      Krav Maga, prevenzione e gestione delle situazioni di pericolo.
+    </p>
+  </section>
 
-  header {
-    min-height: 90px;
-    padding: 0 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    background: rgba(13, 13, 13, 0.95);
-    border-bottom: 1px solid #292929;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+  <section id="corsi" class="section dark">
+    <p class="section-label">Attività</p>
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    color: #ffffff;
-    text-decoration: none;
-  }
+    <h2>I nostri corsi</h2>
 
-  .logo img {
-    display: block;
-    width: auto;
-    height: 70px;
-  }
+    <div class="cards">
+      <article class="card">
+        <h3>Krav Maga</h3>
 
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-    color: #ffffff;
-  }
+        <p>
+          Tecniche semplici e concrete per affrontare situazioni
+          realistiche.
+        </p>
+      </article>
 
-  .logo-text span {
-    color: #ffffff;
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-  }
+      <article class="card">
+        <h3>Difesa personale</h3>
 
-  .logo-text strong {
-    color: #ffffff;
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
+        <p>
+          Prevenzione, gestione dello stress e risposta alle aggressioni.
+        </p>
+      </article>
 
-  nav {
-    display: flex;
-    gap: 24px;
-  }
+      <article class="card">
+        <h3>Corsi per aziende</h3>
 
-  nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
+        <p>
+          Formazione dedicata a operatori, aziende ed enti pubblici.
+        </p>
+      </article>
+    </div>
+  </section>
 
-  nav a:hover {
-    color: #e53935;
-  }
+  <section id="contatti" class="section">
+    <p class="section-label">Informazioni</p>
 
-  .hero {
-    min-height: calc(100vh - 90px);
-    padding: 80px 6%;
-    display: flex;
-    align-items: center;
-    background:
-      linear-gradient(
-        120deg,
-        rgba(0, 0, 0, 0.96),
-        rgba(0, 0, 0, 0.64)
-      ),
-      radial-gradient(
-        circle at 80% 40%,
-        #5c1212,
-        #0d0d0d 45%
-      );
-  }
+    <h2>Vieni a provare una lezione</h2>
 
-  .hero-content {
-    width: min(760px, 100%);
-  }
+    <p>
+      Stiamo preparando il nuovo sito di Self Defense Sondrio ASD.
+    </p>
 
-  .eyebrow,
-  .section-label {
-    color: #ef5350;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    margin: 14px 0 22px;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    line-height: 0.98;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    margin: 10px 0 20px;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.1;
-  }
-
-  h3 {
-    margin-top: 0;
-    font-size: 1.45rem;
-  }
-
-  .intro {
-    max-width: 650px;
-    color: #d1d1d1;
-    font-size: 1.2rem;
-  }
-
-  .actions {
-    margin-top: 35px;
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .button {
-    display: inline-block;
-    padding: 13px 22px;
-    border: 1px solid #e53935;
-    border-radius: 4px;
-    font-weight: 800;
-    text-decoration: none;
-  }
-
-  .primary {
-    color: #ffffff;
-    background: #e53935;
-  }
-
-  .primary:hover {
-    background: #c62828;
-  }
-
-  .secondary {
-    color: #ffffff;
-    background: transparent;
-  }
-
-  .secondary:hover {
-    background: #e53935;
-  }
-
-  .section {
-    padding: 100px 6%;
-  }
-
-  .section > p:not(.section-label) {
-    max-width: 760px;
-    color: #bdbdbd;
-    font-size: 1.08rem;
-  }
-
-  .dark {
-    background: #171717;
-  }
-
-  .cards {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .card {
-    min-height: 220px;
-    padding: 28px;
-    background: #222222;
-    border-top: 4px solid #e53935;
-  }
-
-  .card p {
-    color: #bbbbbb;
-  }
-
-  footer {
-    padding: 30px 6%;
-    color: #888888;
-    text-align: center;
-    border-top: 1px solid #292929;
-  }
-
-  @media (max-width: 760px) {
-    header {
-      padding-top: 18px;
-      padding-bottom: 18px;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .logo {
-      gap: 12px;
-    }
-
-    .logo img {
-      height: 55px;
-    }
-
-    .logo-text span {
-      font-size: 0.7rem;
-    }
-
-    .logo-text strong {
-      font-size: 1.15rem;
-    }
-
-    nav {
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .hero {
-      min-height: 75vh;
-    }
-
-    .cards {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+    <a
+      class="button primary"
+      href="mailto:info@selfdefensesondrio.it"
+    >
+      Scrivici
+    </a>
+  </section>
+</Layout>
