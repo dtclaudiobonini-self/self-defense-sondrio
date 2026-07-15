@@ -1,92 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CourseCard from '../components/CourseCard.astro';
 ---
-
-<Layout
-  title="Self Defense Sondrio ASD"
-  description="Corsi di difesa personale e Krav Maga a Sondrio e Morbegno."
->
+<BaseLayout title="Self Defense Sondrio | Difesa personale e Krav Maga">
   <section class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Self Defense Sondrio ASD</p>
-
-      <h1>Preparati. Reagisci. Difenditi.</h1>
-
-      <p class="intro">
-        Corsi di difesa personale e Krav Maga a Sondrio e Morbegno,
-        aperti a principianti e praticanti di ogni livello.
-      </p>
-
+    <div class="container hero-content">
+      <p class="eyebrow">Sondrio · Morbegno</p>
+      <h1>MENTE. ISTINTO.<br /><span>DIFESA.</span></h1>
+      <p class="lead">Il Krav Maga non è uno sport da combattimento: è un sistema di difesa personale basato su istintività, semplicità e gestione delle situazioni reali.</p>
       <div class="actions">
-        <a class="button primary" href="#corsi">
-          Scopri i corsi
-        </a>
-
-        <a class="button secondary" href="#contatti">
-          Contattaci
-        </a>
+        <a class="button" href="/corsi">Scopri i corsi</a>
+        <a class="button secondary" href="/contatti">Prenota una prova</a>
       </div>
     </div>
   </section>
 
-  <section id="chi-siamo" class="section">
-    <p class="section-label">L'associazione</p>
-
-    <h2>Difesa personale concreta e consapevole</h2>
-
-    <p>
-      Self Defense Sondrio ASD promuove corsi di difesa personale,
-      Krav Maga, prevenzione e gestione delle situazioni di pericolo.
-    </p>
-  </section>
-
-  <section id="corsi" class="section dark">
-    <p class="section-label">Attività</p>
-
-    <h2>I nostri corsi</h2>
-
-    <div class="cards">
-      <article class="card">
-        <h3>Krav Maga</h3>
-
-        <p>
-          Tecniche semplici e concrete per affrontare situazioni
-          realistiche.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Difesa personale</h3>
-
-        <p>
-          Prevenzione, gestione dello stress e risposta alle aggressioni.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>Corsi per aziende</h3>
-
-        <p>
-          Formazione dedicata a operatori, aziende ed enti pubblici.
-        </p>
-      </article>
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Difesa personale</p>
+      <h2>Prepararsi alla realtà</h2>
+      <p>Il Krav Maga non è uno sport da combattimento né un’arte marziale classica, ma un sistema di difesa personale che insegna a gestire situazioni reali. Sono essenziali l’atteggiamento mentale, l’efficacia della tecnica e la sicurezza di chi si difende.</p>
+      <p>Poiché l’aggressione da strada è imprevedibile, l’allenamento sviluppa la capacità di valutare rapidamente le circostanze e scegliere la strategia più adeguata. Per la sua semplicità è adatto a uomini e donne di ogni età.</p>
     </div>
   </section>
 
-  <section id="contatti" class="section">
-    <p class="section-label">Informazioni</p>
-
-    <h2>Vieni a provare una lezione</h2>
-
-    <p>
-      Stiamo preparando il nuovo sito di Self Defense Sondrio ASD.
-    </p>
-
-    <a
-      class="button primary"
-      href="mailto:info@selfdefensesondrio.it"
-    >
-      Scrivici
-    </a>
+  <section class="section alt">
+    <div class="container">
+      <p class="eyebrow">Stagione sportiva</p>
+      <h2>Corsi 2025/2026</h2>
+      <div class="grid">
+        <CourseCard title="Sondrio" schedule="Mercoledì, 19:30–21:00" location="Palestra Liceo Scientifico Donegani, Via Carlo Donegani 3" />
+        <CourseCard title="Morbegno" schedule="Lunedì, 20:00–21:30" location="Palestra Scuola dell’Infanzia Girasole, Via Bosi" />
+        <CourseCard title="Percorsi dedicati" schedule="Su richiesta" location="Forze dell’ordine, donne, aziende, gruppi e lezioni individuali" />
+      </div>
+    </div>
   </section>
-</Layout>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="eyebrow">Origini</p>
+      <h2>Ju Jitsu israeliano e Krav Maga</h2>
+      <p>In Israele, prima della codificazione del Krav Maga nel 1948, esisteva un sistema di autodifesa collegato al Ju Jitsu israeliano. Imi Lichtenfeld sviluppò poi un metodo di combattimento ravvicinato e autodifesa rapido da apprendere, inizialmente destinato alle forze di difesa israeliane.</p>
+      <p>La parola “Krav Maga” significa combattimento con contatto o combattimento a corta distanza. Il metodo semplifica movimenti provenienti da differenti discipline per renderli efficaci in contesti senza regole prestabilite.</p>
+    </div>
+  </section>
+</BaseLayout>

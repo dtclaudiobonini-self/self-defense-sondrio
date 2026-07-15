@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# Self Defense Sondrio – sito Astro
 
-```sh
-npm create astro@latest -- --template minimal
+Progetto Astro statico predisposto per GitHub e Cloudflare Pages.
+
+## Apertura in VS Code
+
+1. Estrai lo ZIP.
+2. Apri la cartella `self-defense-sondrio-astro` in Visual Studio Code.
+3. Apri il terminale integrato.
+4. Esegui:
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Il sito sarà disponibile, normalmente, su `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Build di produzione
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+La cartella generata sarà `dist`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Cloudflare Pages
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Framework preset: Astro
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Root directory: `/`
+- Node.js: 20 o superiore
 
-## 🧞 Commands
+Collega il repository GitHub a Cloudflare Pages. Ogni push sul branch principale
+avvierà automaticamente una nuova pubblicazione.
 
-All commands are run from the root of the project, from a terminal:
+## Immagini
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Sostituisci i segnaposto nelle cartelle:
 
-## 👀 Want to learn more?
+- `public/images/hero`
+- `public/images/staff`
+- `public/images/gallery`
+- `public/images/news`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+I testi sono stati importati dal sito esistente e riorganizzati. Prima della
+pubblicazione definitiva aggiorna i dati della nuova ASD, gli indirizzi social,
+le fotografie e l'informativa privacy.

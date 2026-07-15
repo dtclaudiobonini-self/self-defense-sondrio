@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CourseCard from '../components/CourseCard.astro';
+---
+<BaseLayout title="Corsi | Self Defense Sondrio">
+<section class="section">
+<div class="container">
+  <p class="eyebrow">Formazione</p>
+  <h1>I nostri corsi</h1>
+  <div class="prose">
+    <p class="lead">La difesa personale non è soltanto un insieme di tecniche, ma prima di tutto sicurezza personale, prevenzione e capacità di evitare lo scontro.</p>
+    <p>Ogni scontro può produrre conseguenze fisiche, psicologiche, etiche e legali. I corsi si fondano sull’esperienza del M° Claudio Bonini e integrano elementi di Karate, Ju Jitsu, Sanda, Boxe e Judo.</p>
+    <p>Vengono affrontati prevenzione, psicologia dell’aggressione, atteggiamento mentale, paura, panico e lettura del linguaggio del corpo, anche con il contributo di professionisti del settore.</p>
+    <p>Le tecniche devono essere semplici, istintive e basate su movimenti naturali. Le tecniche spettacolari le lasciamo ai film.</p>
+  </div>
+</div>
+</section>
+<section class="section alt">
+<div class="container">
+  <h2>Corsi attivi 2025/2026</h2>
+  <div class="grid">
+    <CourseCard title="Sondrio" schedule="Mercoledì 19:30–21:00" location="Liceo Scientifico Donegani, Via Carlo Donegani 3, Sondrio" />
+    <CourseCard title="Morbegno" schedule="Lunedì 20:00–21:30" location="Scuola dell’Infanzia Girasole, Via Bosi, Morbegno" />
+    <CourseCard title="Corsi avanzati" schedule="Programmazione dedicata" location="Percorsi privati per donne, team building e corso Police FFOO Sondrio" />
+  </div>
+</div>
+</section>
+</BaseLayout>

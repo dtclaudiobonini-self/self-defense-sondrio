@@ -1,7 +1,24 @@
----
-const anno = new Date().getFullYear();
----
-
-<footer class="site-footer">
-  <p>© {anno} Self Defense Sondrio ASD</p>
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>Self Defense Sondrio ASD</strong>
+      <p>Difesa personale, prevenzione e formazione a Sondrio e Morbegno.</p>
+    </div>
+    <div>
+      <strong>Contatti</strong>
+      <p><a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a><br>
+      <a href="tel:+393488963056">348 896 3056</a></p>
+    </div>
+    <div>
+      <strong>Nota</strong>
+      <p>Dati societari da aggiornare prima della pubblicazione definitiva.</p>
+    </div>
+  </div>
 </footer>
+<style>
+footer{border-top:1px solid var(--line);background:#07080a;padding:3rem 0;color:var(--muted)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+footer strong{color:white}
+footer a{color:inherit}
+@media(max-width:750px){.footer-grid{grid-template-columns:1fr}}
+</style>

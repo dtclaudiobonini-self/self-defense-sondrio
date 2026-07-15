@@ -1,0 +1,11 @@
+---
+interface Props { title: string; schedule: string; location: string; text?: string; }
+const { title, schedule, location, text } = Astro.props;
+---
+<article class="card">
+  <span class="eyebrow">Corso attivo</span>
+  <h3>{title}</h3>
+  <p><strong>{schedule}</strong></p>
+  <p>{location}</p>
+  {text && <p class="meta">{text}</p>}
+</article>
