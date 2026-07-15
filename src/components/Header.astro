@@ -13,9 +13,26 @@ const links = [
 <header class="site-header">
   <div class="container bar">
     <a class="brand" href="/" aria-label="Self Defense Sondrio">
-      <span class="mark">SDS</span>
-      <span>SELF DEFENSE<br /><b>SONDRIO</b></span>
-    </a>
+
+  <img
+
+    src="/images/logo-self-defense-sondrio.png"
+
+    alt="Self Defense Sondrio"
+
+    class="logo"
+
+  />
+
+  <span class="brand-text">
+
+    SELF DEFENSE<br />
+
+    <b>SONDRIO</b>
+
+  </span>
+
+</a>
     <button class="menu" aria-label="Apri menu" aria-expanded="false">☰</button>
     <nav>
       {links.map(([label, href]) => <a href={href}>{label}</a>)}
@@ -33,8 +50,48 @@ const links = [
 <style>
 .site-header{position:sticky;top:0;z-index:20;background:rgba(11,12,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .bar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-size:.78rem;line-height:1.05;letter-spacing:.08em}
-.mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--accent);font-weight:900;letter-spacing:-.08em}
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:.8rem;
+
+  text-decoration:none;
+
+  color:white;
+
+}
+
+.logo{
+
+  height:58px;
+
+  width:auto;
+
+  display:block;
+
+}
+
+.brand-text{
+
+  font-size:.82rem;
+
+  line-height:1.05;
+
+  letter-spacing:.08em;
+
+}
+
+.brand-text b{
+
+  font-size:1.35rem;
+
+  letter-spacing:.05em;
+
+}
 nav{display:flex;align-items:center;gap:1rem}
 nav a{text-decoration:none;font-size:.9rem;font-weight:700;color:var(--muted)}
 nav a:hover{color:white}
