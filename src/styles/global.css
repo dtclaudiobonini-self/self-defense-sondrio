@@ -36,9 +36,33 @@ p { margin: 0 0 1.1rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 .prose { max-width: 820px; }
 .prose ul { padding-left: 1.25rem; }
-.hero { min-height: 72vh; display: grid; align-items: center; position: relative; overflow: hidden; background:
- radial-gradient(circle at 85% 20%, rgba(215,25,32,.34), transparent 34%),
- linear-gradient(120deg, #08090b, #15171c); }
+.hero {
+
+  min-height: 72vh;
+
+  display: grid;
+
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(circle at 85% 20%, rgba(215,25,32,.25), transparent 34%),
+
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.65)),
+
+    url("/images/hero.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+}
 .hero::after { content:""; position:absolute; inset:auto -10% -45% 40%; height:70%; transform:rotate(-12deg); background:var(--accent); opacity:.16; }
 .hero-content { position: relative; z-index: 1; padding: 6rem 0; }
 .hero h1 span { color: var(--accent); }
