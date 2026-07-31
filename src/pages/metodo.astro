@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const steps=[['01','Osservare','Leggere il contesto, riconoscere segnali di rischio e mantenere una distanza utile.'],['02','Prevenire','Allenare comunicazione, postura e scelte che possono ridurre l’esposizione al pericolo.'],['03','Gestire','Lavorare su respirazione, lucidità e decisione in condizioni di pressione controllata.'],['04','Agire','Sperimentare risposte semplici e proporzionate con esercizi progressivi e supervisionati.']];
+---
+<BaseLayout title="Il metodo | Self Defense Sondrio ASD">
+ <section class="page-hero"><div class="container"><p class="eyebrow">Il metodo</p><h1>La sicurezza parte dalla consapevolezza.</h1><p class="lead">La tecnica è solo una parte del percorso. Il lavoro parte dalla capacità di osservare, prevenire e prendere decisioni lucide.</p></div></section>
+ <section class="section section-light"><div class="container steps">{steps.map(s=><article><span>{s[0]}</span><h2>{s[1]}</h2><p>{s[2]}</p></article>)}</div></section>
+ <section class="split"><div class="split-image" role="img" aria-label="Dimostrazione di una tecnica di difesa personale"></div><div class="split-content"><p class="eyebrow">Responsabilità</p><h2>Nessuna falsa promessa.</h2><p class="lead">Nessun corso può garantire sicurezza in ogni situazione. L’obiettivo è ampliare consapevolezza e possibilità di risposta, privilegiando prevenzione e allontanamento dal pericolo.</p><a class="button" href="/contatti">Vieni a conoscerci →</a></div></section>
+</BaseLayout>
+<style>
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#ccc}
+.steps article{min-height:370px;background:var(--paper);padding:2.5rem;display:flex;flex-direction:column}.steps span{color:var(--red);font-weight:800}.steps h2{margin:auto 0 1rem;font-size:clamp(3rem,6vw,5rem)}.steps p{max-width:500px;color:#555}.split-image{background-image:url('/images/training.webp')}
+@media(max-width:700px){.steps{grid-template-columns:1fr}}
+</style>

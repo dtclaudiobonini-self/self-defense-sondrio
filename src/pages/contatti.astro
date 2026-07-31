@@ -1,17 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Contatti | Self Defense Sondrio">
-<section class="section">
-<div class="container">
-  <p class="eyebrow">Parliamone</p>
-  <h1>Contattaci</h1>
-  <div class="grid">
-    <article class="card"><h3>Email</h3><p><a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a></p></article>
-    <article class="card"><h3>Telefono</h3><p><a href="tel:+393488963056">348 896 3056</a></p></article>
-    <article class="card"><h3>Prima prova</h3><p>Scrivici per conoscere disponibilità, sedi e modalità di partecipazione.</p></article>
-  </div>
-  <div class="notice" style="margin-top:2rem">Aggiorna i dati fiscali e la sede legale della nuova ASD prima di pubblicare il sito.</div>
-</div>
-</section>
+<BaseLayout title="Contatti | Self Defense Sondrio ASD">
+ <section class="page-hero"><div class="container"><p class="eyebrow">Contatti</p><h1>Comincia con una domanda.</h1><p class="lead">Scrivici per conoscere corsi, disponibilità e modalità di partecipazione. Ti aiuteremo a trovare il percorso adatto.</p></div></section>
+ <section class="section section-light"><div class="container contact-grid">
+  <div><p class="eyebrow">Parliamone</p><h2>Ti rispondiamo volentieri.</h2><div class="contact-list"><div><span>Telefono</span><a href="tel:+393488963056">348 896 3056</a></div><div><span>Email</span><a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a></div><div><span>Attività</span><p>Sondrio e Morbegno</p></div></div></div>
+  <form action="mailto:info@difesapersonalesondrio.it" method="post" enctype="text/plain">
+   <label>Nome e cognome<input name="nome" required autocomplete="name"/></label>
+   <label>Email<input name="email" type="email" required autocomplete="email"/></label>
+   <label>Telefono <small>facoltativo</small><input name="telefono" type="tel" autocomplete="tel"/></label>
+   <label>Corso di interesse<select name="corso"><option>Difesa personale — Sondrio</option><option>Difesa personale — Morbegno</option><option>Percorso dedicato</option><option>Formazione enti e aziende</option><option>Non so ancora</option></select></label>
+   <label>Messaggio<textarea name="messaggio" rows="5" required></textarea></label>
+   <label class="check"><input type="checkbox" required/> <span>Ho letto l’<a href="/privacy">informativa privacy</a> e acconsento al trattamento dei dati.</span></label>
+   <button class="button dark" type="submit">Invia la richiesta →</button>
+   <p class="note">Il messaggio verrà aperto nella tua applicazione email.</p>
+  </form>
+ </div></section>
 </BaseLayout>
+<style>
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:7rem}.contact-grid h2{font-size:clamp(3rem,6vw,5.5rem)}
+.contact-list{margin-top:3rem}.contact-list>div{padding:1.2rem 0;border-top:1px solid #cbc8c1}.contact-list span{display:block;color:#777;font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.contact-list a,.contact-list p{font:600 1.3rem 'Barlow Condensed';text-decoration:none}.contact-list a:hover{color:var(--red)}
+form{padding:2.5rem;background:#fff}label{display:block;margin-bottom:1.2rem;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}label small{font-weight:500;color:#777}
+input,select,textarea{width:100%;margin-top:.45rem;padding:.9rem 0;border:0;border-bottom:1px solid #aaa;background:transparent;border-radius:0;color:#111;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--red)}textarea{resize:vertical}.check{display:flex;gap:.7rem;align-items:flex-start;text-transform:none;font-weight:500;letter-spacing:0}.check input{width:18px;height:18px;margin:3px 0}.check span{color:#555}.note{margin-top:1rem;color:#777;font-size:.75rem}
+@media(max-width:850px){.contact-grid{grid-template-columns:1fr;gap:3rem}form{padding:1.5rem}}
+</style>
