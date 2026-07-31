@@ -1,37 +1,442 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Contatti | Self Defense Sondrio ASD">
-    <script
-  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-  async
-  defer>
-</script>
- <section class="page-hero"><div class="container"><p class="eyebrow">Contatti</p><h1>Comincia con una domanda.</h1><p class="lead">Scrivici per conoscere corsi, disponibilità e modalità di partecipazione. Ti aiuteremo a trovare il percorso adatto.</p></div></section>
- <section class="section section-light"><div class="container contact-grid">
-  <div><p class="eyebrow">Parliamone</p><h2>Ti rispondiamo volentieri.</h2><div class="contact-list"><div><span>Telefono</span><a href="tel:+393488963056">348 896 3056</a></div><div><span>Email</span><a href="mailto:info@selfdefensesondrio.it">info@selfdefensesondrio.it</a></div><div><span>Attività</span><p>Sondrio e Morbegno</p></div></div></div>
-  <form action="mailto:info@difesapersonalesondrio.it" method="post" enctype="text/plain">
-   <label>Nome e cognome<input name="nome" required autocomplete="name"/></label>
-   <label>Email<input name="email" type="email" required autocomplete="email"/></label>
-   <label>Telefono <small>facoltativo</small><input name="telefono" type="tel" autocomplete="tel"/></label>
-   <label>Corso di interesse<select name="corso"><option>Difesa personale — Sondrio</option><option>Difesa personale — Morbegno</option><option>Percorso dedicato</option><option>Formazione enti e aziende</option><option>Non so ancora</option></select></label>
-   <label>Messaggio<textarea name="messaggio" rows="5" required></textarea></label>
-   <label class="check"><input type="checkbox" required/> <span>Ho letto l’<a href="/privacy">informativa privacy</a> e acconsento al trattamento dei dati.</span></label>
-   <div
-  class="cf-turnstile"
-  data-sitekey="0x4AAAAAAEC9Ll3SP9YQVnXS"
-  data-theme="light"
-  data-language="it">
-</div>
-   <button class="button dark" type="submit">Invia la richiesta →</button>
-   <p class="note">Il messaggio verrà aperto nella tua applicazione email.</p>
-  </form>
- </div></section>
+
+<BaseLayout
+  title="Contatti | Self Defense Sondrio ASD"
+  description="Contatta Self Defense Sondrio ASD per informazioni sui corsi di difesa personale a Sondrio e Morbegno."
+>
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Contatti</p>
+
+      <h1>Comincia con una domanda.</h1>
+
+      <p class="lead">
+        Scrivici per conoscere corsi, disponibilità e modalità di
+        partecipazione. Ti aiuteremo a trovare il percorso adatto.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container contact-grid">
+
+      <div>
+        <p class="eyebrow">Parliamone</p>
+
+        <h2>Ti rispondiamo volentieri.</h2>
+
+        <div class="contact-list">
+          <div>
+            <span>Telefono</span>
+            <a href="tel:+393488963056">348 896 3056</a>
+          </div>
+
+          <div>
+            <span>Email</span>
+            <a href="mailto:info@selfdefensesondrio.it">
+              info@selfdefensesondrio.it
+            </a>
+          </div>
+
+          <div>
+            <span>Attività</span>
+            <p>Sondrio e Morbegno</p>
+          </div>
+        </div>
+      </div>
+
+      <form
+        id="contact-form"
+        action="/api/contatti"
+        method="post"
+      >
+        <label>
+          Nome e cognome
+          <input
+            name="nome"
+            type="text"
+            required
+            minlength="2"
+            maxlength="100"
+            autocomplete="name"
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            name="email"
+            type="email"
+            required
+            maxlength="150"
+            autocomplete="email"
+          />
+        </label>
+
+        <label>
+          Telefono <small>facoltativo</small>
+          <input
+            name="telefono"
+            type="tel"
+            maxlength="30"
+            autocomplete="tel"
+          />
+        </label>
+
+        <label>
+          Corso di interesse
+          <select name="corso" required>
+            <option value="">Seleziona un'opzione</option>
+
+            <option value="difesa-personale-sondrio">
+              Difesa personale — Sondrio
+            </option>
+
+            <option value="difesa-personale-morbegno">
+              Difesa personale — Morbegno
+            </option>
+
+            <option value="percorso-dedicato">
+              Percorso dedicato
+            </option>
+
+            <option value="formazione-enti-aziende">
+              Formazione enti e aziende
+            </option>
+
+            <option value="da-definire">
+              Non so ancora
+            </option>
+          </select>
+        </label>
+
+        <label>
+          Messaggio
+          <textarea
+            name="messaggio"
+            rows="5"
+            required
+            minlength="10"
+            maxlength="2000"
+          ></textarea>
+        </label>
+
+        <!-- Campo antispam invisibile ai normali visitatori -->
+        <div class="honeypot" aria-hidden="true">
+          <label>
+            Non compilare questo campo
+            <input
+              name="website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </label>
+        </div>
+
+        <label class="check">
+          <input
+            type="checkbox"
+            name="privacy"
+            value="accettata"
+            required
+          />
+
+          <span>
+            Ho letto l’
+            <a href="/privacy" target="_blank" rel="noopener">
+              informativa privacy
+            </a>
+            e acconsento al trattamento dei dati necessario per rispondere
+            alla richiesta.
+          </span>
+        </label>
+
+        <div
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAAEC9Ll3SP9YQVnXS"
+          data-theme="light"
+          data-language="it"
+          data-action="contact-form"
+          data-error-callback="turnstileError"
+          data-expired-callback="turnstileExpired"
+        ></div>
+
+        <div
+          id="form-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <button
+          id="submit-button"
+          class="button dark"
+          type="submit"
+        >
+          Invia la richiesta →
+        </button>
+
+        <p class="note">
+          I dati saranno utilizzati esclusivamente per rispondere alla tua
+          richiesta.
+        </p>
+      </form>
+
+    </div>
+  </section>
+
+  <script is:inline>
+    const form = document.getElementById('contact-form');
+    const submitButton = document.getElementById('submit-button');
+    const formMessage = document.getElementById('form-message');
+
+    window.turnstileError = function () {
+      formMessage.textContent =
+        'Il controllo di sicurezza non è stato completato. Ricarica la pagina e riprova.';
+      formMessage.className = 'form-message error';
+    };
+
+    window.turnstileExpired = function () {
+      formMessage.textContent =
+        'Il controllo di sicurezza è scaduto. Completa nuovamente la verifica.';
+      formMessage.className = 'form-message error';
+    };
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      formMessage.textContent = '';
+      formMessage.className = 'form-message';
+
+      const formData = new FormData(form);
+
+      const turnstileToken = formData.get('cf-turnstile-response');
+
+      if (!turnstileToken) {
+        formMessage.textContent =
+          'Completa il controllo di sicurezza prima di inviare.';
+        formMessage.className = 'form-message error';
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Invio in corso…';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        let result = {};
+
+        try {
+          result = await response.json();
+        } catch {
+          result = {};
+        }
+
+        if (!response.ok) {
+          throw new Error(
+            result.message ||
+              'Non è stato possibile inviare la richiesta.'
+          );
+        }
+
+        formMessage.textContent =
+          result.message ||
+          'Richiesta inviata correttamente. Ti risponderemo al più presto.';
+
+        formMessage.className = 'form-message success';
+
+        form.reset();
+
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+      } catch (error) {
+        formMessage.textContent =
+          error instanceof Error
+            ? error.message
+            : 'Si è verificato un errore durante l’invio. Riprova più tardi.';
+
+        formMessage.className = 'form-message error';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Invia la richiesta →';
+      }
+    });
+  </script>
 </BaseLayout>
+
 <style>
-.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:7rem}.contact-grid h2{font-size:clamp(3rem,6vw,5.5rem)}
-.contact-list{margin-top:3rem}.contact-list>div{padding:1.2rem 0;border-top:1px solid #cbc8c1}.contact-list span{display:block;color:#777;font-size:.7rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.contact-list a,.contact-list p{font:600 1.3rem 'Barlow Condensed';text-decoration:none}.contact-list a:hover{color:var(--red)}
-form{padding:2.5rem;background:#fff}label{display:block;margin-bottom:1.2rem;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}label small{font-weight:500;color:#777}
-input,select,textarea{width:100%;margin-top:.45rem;padding:.9rem 0;border:0;border-bottom:1px solid #aaa;background:transparent;border-radius:0;color:#111;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--red)}textarea{resize:vertical}.check{display:flex;gap:.7rem;align-items:flex-start;text-transform:none;font-weight:500;letter-spacing:0}.check input{width:18px;height:18px;margin:3px 0}.check span{color:#555}.note{margin-top:1rem;color:#777;font-size:.75rem}
-@media(max-width:850px){.contact-grid{grid-template-columns:1fr;gap:3rem}form{padding:1.5rem}}
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 7rem;
+  }
+
+  .contact-grid h2 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+  }
+
+  .contact-list {
+    margin-top: 3rem;
+  }
+
+  .contact-list > div {
+    padding: 1.2rem 0;
+    border-top: 1px solid #cbc8c1;
+  }
+
+  .contact-list span {
+    display: block;
+    color: #777;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .contact-list a,
+  .contact-list p {
+    font: 600 1.3rem 'Barlow Condensed';
+    text-decoration: none;
+  }
+
+  .contact-list a:hover {
+    color: var(--red);
+  }
+
+  form {
+    padding: 2.5rem;
+    background: #fff;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  label small {
+    color: #777;
+    font-weight: 500;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    margin-top: 0.45rem;
+    padding: 0.9rem 0;
+    border: 0;
+    border-bottom: 1px solid #aaa;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: #111;
+    font: inherit;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--red);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .check {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .check input {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin: 3px 0 0;
+  }
+
+  .check span {
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .check a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .cf-turnstile {
+    min-height: 65px;
+    margin: 1.2rem 0;
+  }
+
+  .form-message {
+    min-height: 1.5rem;
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .form-message.success {
+    color: #186a3b;
+  }
+
+  .form-message.error {
+    color: #a61b1b;
+  }
+
+  button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+  }
+
+  .note {
+    margin-top: 1rem;
+    color: #777;
+    font-size: 0.75rem;
+  }
+
+  .honeypot {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 850px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    form {
+      padding: 1.5rem;
+    }
+  }
 </style>
