@@ -2,6 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Contatti | Self Defense Sondrio ASD">
+    <script
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer>
+</script>
  <section class="page-hero"><div class="container"><p class="eyebrow">Contatti</p><h1>Comincia con una domanda.</h1><p class="lead">Scrivici per conoscere corsi, disponibilità e modalità di partecipazione. Ti aiuteremo a trovare il percorso adatto.</p></div></section>
  <section class="section section-light"><div class="container contact-grid">
   <div><p class="eyebrow">Parliamone</p><h2>Ti rispondiamo volentieri.</h2><div class="contact-list"><div><span>Telefono</span><a href="tel:+393488963056">348 896 3056</a></div><div><span>Email</span><a href="mailto:info@selfdefensesondrio.it">info@selfdefensesondrio.it</a></div><div><span>Attività</span><p>Sondrio e Morbegno</p></div></div></div>
@@ -12,6 +17,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
    <label>Corso di interesse<select name="corso"><option>Difesa personale — Sondrio</option><option>Difesa personale — Morbegno</option><option>Percorso dedicato</option><option>Formazione enti e aziende</option><option>Non so ancora</option></select></label>
    <label>Messaggio<textarea name="messaggio" rows="5" required></textarea></label>
    <label class="check"><input type="checkbox" required/> <span>Ho letto l’<a href="/privacy">informativa privacy</a> e acconsento al trattamento dei dati.</span></label>
+   <div
+  class="cf-turnstile"
+  data-sitekey="0x4AAAAAAEC9Ll3SP9YQVnXS"
+  data-theme="light"
+  data-language="it">
+</div>
    <button class="button dark" type="submit">Invia la richiesta →</button>
    <p class="note">Il messaggio verrà aperto nella tua applicazione email.</p>
   </form>
