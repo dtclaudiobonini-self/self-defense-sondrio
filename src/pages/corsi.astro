@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const courses=[
- {id:'difesa-personale',num:'01',title:'Difesa personale',tag:'Corso continuativo',text:'Prevenzione, gestione delle distanze, mobilità e risposte semplici. Un percorso progressivo adatto anche a chi parte da zero.',meta:'Sondrio · Mercoledì 19:30–21:00'},
- {id:'difesa-personale-morbegno',num:'02',title:'Corso Morbegno',tag:'Corso continuativo',text:'Allenamento pratico e graduale per sviluppare maggiore consapevolezza, autocontrollo e capacità di risposta.',meta:'Morbegno · Lunedì 20:00–21:30'},
+ {id:'difesa-personale',num:'01',title:'Difesa personale Sondrio',tag:'Corso continuativo',text:'Prevenzione, gestione delle distanze, mobilità e risposte semplici. Un percorso progressivo adatto anche a chi parte da zero.',meta:'Sondrio · Mercoledì 19:30–21:00'},
+ {id:'difesa-personale-morbegno',num:'02',title:'Difesa personale Morbegno',tag:'Corso continuativo',text:'Allenamento pratico e graduale per sviluppare maggiore consapevolezza, autocontrollo e capacità di risposta.',meta:'Morbegno · Lunedì 20:00–21:30'},
  {id:'percorsi',num:'03',title:'Percorsi dedicati',tag:'Su richiesta',text:'Attività per donne, piccoli gruppi e lezioni individuali, definite in base agli obiettivi e al contesto.',meta:'Programmazione personalizzata'},
  {id:'formazione',num:'04',title:'Enti e aziende',tag:'Formazione',text:'Incontri e progetti per organizzazioni, realtà del territorio e operatori, con contenuti concordati sulle necessità reali.',meta:'Sedi e calendario da concordare'}
 ];
@@ -24,3 +24,4 @@ const courses=[
 .pads{background-image:url('/images/pads.jpg')}
 @media(max-width:800px){.course-list article{grid-template-columns:40px 1fr}.meta{grid-column:2}.course-list h2{font-size:3rem}}
 </style>
+
