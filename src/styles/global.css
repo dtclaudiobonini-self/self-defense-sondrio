@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
-
 :root {
   --ink: #0b0c0d;
   --ink-soft: #141618;
@@ -13,8 +11,9 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--ink); color: var(--white); font-family: Manrope, sans-serif; line-height: 1.65; }
+body { margin: 0; background: var(--ink); color: var(--white); font-family: Manrope, Arial, sans-serif; line-height: 1.65; }
 body.menu-open { overflow: hidden; }
+body.cookie-dialog-open { overflow: hidden; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; }

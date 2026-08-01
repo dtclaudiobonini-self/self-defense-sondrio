@@ -7,7 +7,12 @@ interface TurnstileResult {
   "error-codes"?: string[];
 }
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+interface PagesContext<TEnv> {
+  request: Request;
+  env: TEnv;
+}
+
+export const onRequestPost = async (context: PagesContext<Env>): Promise<Response> => {
   try {
     const formData = await context.request.formData();
 

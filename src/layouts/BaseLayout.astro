@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 import '../styles/global.css';
 const {title='Self Defense Sondrio ASD',description='Corsi di difesa personale a Sondrio e Morbegno: prevenzione, consapevolezza e preparazione pratica.'}=Astro.props;
 ---
@@ -21,5 +22,6 @@ const {title='Self Defense Sondrio ASD',description='Corsi di difesa personale a
   <Header />
   <main id="contenuto"><slot /></main>
   <Footer />
+  <CookieConsent />
  </body>
 </html>

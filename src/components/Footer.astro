@@ -7,7 +7,7 @@
   <div><span>Esplora</span><a href="/corsi">Corsi</a><a href="/metodo">Metodo</a><a href="/associazione">Associazione</a></div>
   <div><span>Contatti</span><a href="tel:+393488963056">348 896 3056</a><a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a><a href="/contatti">Richiedi informazioni</a></div>
  </div>
- <div class="container bottom"><small>© {new Date().getFullYear()} Self Defense Sondrio ASD</small><a href="/privacy">Privacy</a></div>
+ <div class="container bottom"><small>© {new Date().getFullYear()} Self Defense Sondrio ASD</small><div class="legal"><a href="/privacy">Privacy</a><button type="button" data-cookie-review>Rivedi preferenze cookie</button></div></div>
 </footer>
 <style>
 footer{padding:5rem 0 2rem;background:#070708;border-top:1px solid var(--line)}
@@ -20,5 +20,8 @@ a{width:fit-content;color:#ddd;text-decoration:none;font-size:.9rem}
 a:hover{color:#fff}
 .bottom{display:flex;justify-content:space-between;margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--line);color:#777}
 .bottom a{font-size:.75rem}
+.legal{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:1rem}
+.legal button{padding:0;border:0;background:none;color:#ddd;font-size:.75rem;cursor:pointer}
+.legal button:hover{color:#fff}
 @media(max-width:750px){.footer-grid{grid-template-columns:1fr;gap:2.5rem}.bottom{margin-top:3rem}}
 </style>
