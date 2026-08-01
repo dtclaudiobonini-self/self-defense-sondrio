@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Cookie Policy | Self Defense Sondrio ASD"
+  description="Informazioni sui cookie e sugli strumenti di tracciamento utilizzati dal sito di Self Defense Sondrio ASD."
+>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Informativa</p>
+      <h1>Cookie Policy.</h1>
+      <p class="lead">
+        Quali strumenti utilizziamo, perché e come puoi gestire le tue scelte.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container cookie-policy">
+      <p class="last-update"><strong>Ultimo aggiornamento:</strong> 1° agosto 2026</p>
+
+      <p>
+        Questa pagina descrive l’uso di cookie e tecnologie analoghe sul sito di
+        <strong>Self Defense Sondrio ASD</strong>. Per le informazioni complete
+        sul trattamento dei dati personali consulta la <a href="/privacy">Privacy Policy</a>.
+      </p>
+
+      <h2>1. Cosa sono i cookie</h2>
+      <p>
+        I cookie sono piccoli file che un sito o un servizio esterno può salvare
+        nel browser. Il sito può usare anche tecnologie analoghe, come la memoria
+        locale del browser, per ricordare le preferenze espresse dall’utente.
+      </p>
+
+      <h2>2. Strumenti tecnici necessari</h2>
+      <p>
+        Gli strumenti necessari permettono il funzionamento e la protezione del
+        sito e non richiedono consenso. Comprendono:
+      </p>
+      <ul>
+        <li>le funzioni tecniche e di sicurezza dell’infrastruttura Cloudflare;</li>
+        <li>Cloudflare Turnstile, usato nel modulo contatti per contrastare invii automatici e abusi;</li>
+        <li>la memoria locale che conserva le preferenze selezionate nel banner.</li>
+      </ul>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Strumento</th><th>Finalità</th><th>Durata</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><code>sds-cookie-consent</code></td>
+              <td>Memorizza le scelte relative ad Analytics, Forms, Maps e YouTube.</td>
+              <td>Fino alla cancellazione dei dati del sito dal browser o a un aggiornamento del sistema di consenso.</td>
+            </tr>
+            <tr>
+              <td>Cloudflare Turnstile</td>
+              <td>Verifica tecnica anti-abuso del modulo contatti.</td>
+              <td>Secondo le modalità tecniche definite da Cloudflare.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. Google Analytics</h2>
+      <p>
+        Google Analytics 4 viene caricato esclusivamente se l’utente abilita la
+        preferenza “Google Analytics”. Può utilizzare cookie come <code>_ga</code>
+        e <code>_ga_&lt;ID&gt;</code> per produrre statistiche sull’utilizzo del sito.
+        La durata indicativa può arrivare fino a 2 anni.
+      </p>
+      <p>
+        Se il consenso non viene prestato, il codice Analytics non viene scaricato.
+        In caso di revoca, il sito interrompe il caricamento e tenta di eliminare
+        i cookie Analytics accessibili dal proprio dominio.
+      </p>
+
+      <h2>4. Contenuti Google esterni</h2>
+      <p>
+        Google Forms, Google Maps e YouTube sono gestiti come tre preferenze
+        distinte. I relativi contenuti incorporati restano bloccati e non
+        stabiliscono connessioni con i fornitori finché l’utente non abilita il
+        servizio corrispondente.
+      </p>
+      <p>
+        Dopo l’attivazione, Google può ricevere dati tecnici quali indirizzo IP,
+        browser, dispositivo, pagina visitata ed eventuali identificativi o
+        informazioni associati all’account Google dell’utente. Nomi e durata dei
+        cookie possono variare in base al servizio e alle impostazioni personali.
+      </p>
+
+      <h2>5. Gestire o revocare il consenso</h2>
+      <p>
+        Al primo accesso puoi accettare tutti i servizi facoltativi, rifiutarli
+        tutti oppure scegliere separatamente Analytics, Forms, Maps e YouTube.
+        Il rifiuto non impedisce di utilizzare le funzioni essenziali del sito.
+      </p>
+      <p>
+        Puoi modificare o revocare le scelte in qualsiasi momento. La revoca non
+        pregiudica la liceità dei trattamenti effettuati prima della modifica.
+      </p>
+      <button class="review-button" type="button" data-cookie-review>
+        Rivedi preferenze cookie
+      </button>
+
+      <h2>6. Impostazioni del browser</h2>
+      <p>
+        Puoi anche eliminare o bloccare cookie e dati dei siti dalle impostazioni
+        del browser. Il blocco indiscriminato degli strumenti tecnici può
+        compromettere alcune funzioni, incluso l’invio protetto del modulo contatti.
+      </p>
+
+      <h2>7. Informazioni dei fornitori</h2>
+      <ul>
+        <li><a href="https://www.cloudflare.com/it-it/privacypolicy/" target="_blank" rel="noopener noreferrer">Informativa privacy Cloudflare</a></li>
+        <li><a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener noreferrer">Informativa privacy Google</a></li>
+        <li><a href="https://policies.google.com/technologies/cookies?hl=it" target="_blank" rel="noopener noreferrer">Come Google utilizza i cookie</a></li>
+      </ul>
+
+      <h2>8. Titolare del trattamento</h2>
+      <address>
+        <strong>Self Defense Sondrio ASD</strong><br />
+        Via delle Pergole, 2 – 23100 Sondrio<br />
+        Codice fiscale: 93039150144<br />
+        E-mail: <a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a>
+      </address>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cookie-policy{max-width:920px}
+  .cookie-policy h2{margin:3.5rem 0 1.25rem;font-size:clamp(2rem,5vw,3.5rem);line-height:1.05}
+  .cookie-policy p,.cookie-policy li,.cookie-policy address,.cookie-policy td,.cookie-policy th{color:#555;line-height:1.75}
+  .cookie-policy p{margin:0 0 1.15rem}
+  .cookie-policy ul{margin:0 0 1.5rem;padding-left:1.4rem}
+  .cookie-policy li{margin-bottom:.55rem}
+  .cookie-policy address{font-style:normal}
+  .cookie-policy a{color:inherit;text-decoration:underline;text-underline-offset:.18em}
+  .last-update{margin-bottom:2rem!important}
+  .table-wrapper{margin:1.5rem 0 2rem;overflow-x:auto}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:1rem;border:1px solid #d8d8d8;text-align:left;vertical-align:top}
+  th{color:#222!important;background:#e8e6e0}
+  code{padding:.15rem .35rem;border-radius:.2rem;background:#e4e2dc;color:#333}
+  .review-button{min-height:48px;margin-top:.5rem;padding:.75rem 1.1rem;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:.76rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .review-button:hover{background:var(--red);border-color:var(--red)}
+  @media(max-width:640px){th,td{min-width:180px;padding:.75rem}}
+</style>
