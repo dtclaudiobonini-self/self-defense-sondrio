@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www.difesapersonalesondrio.it',
+  site: 'https://www.selfdefensesondrio.it',
   output: 'static'
 });
