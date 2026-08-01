@@ -75,5 +75,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .wide-photo{margin-top:5rem}.wide-photo img{width:100%;max-height:720px;object-fit:cover;object-position:center}
 .training{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('/images/training.webp')}
 .faq-section{padding-top:2rem}
-@media(max-width:800px){.hero{background-position:62% center}.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#090a0b 0%,transparent 55%)}.hero-copy{align-self:end;padding-bottom:8rem}.scroll{display:none}.story{grid-template-columns:1fr;gap:2rem}.wide-photo{margin-top:3rem}}
+@media(max-width:800px){
+ .hero{min-height:auto;display:block;overflow:hidden;background-color:var(--ink);background-image:url('/images/hero.webp');background-repeat:no-repeat;background-position:63% top;background-size:auto 76vw}
+ .hero::before{content:'';position:absolute;z-index:1;inset:0 0 auto;height:76vw;background:linear-gradient(180deg,rgba(5,6,7,.35) 0%,transparent 35%,var(--ink) 100%)}
+ .hero::after{display:none}
+ .hero-copy{padding-top:calc(76vw + 2.5rem);padding-bottom:5rem}
+ .hero h1{font-size:clamp(3.5rem,15vw,5.5rem)}
+ .scroll{display:none}
+ .story{grid-template-columns:1fr;gap:2rem}
+ .wide-photo{margin-top:3rem}
+}
+@media(max-width:420px){.hero{background-position:66% top;background-size:auto 82vw}.hero::before{height:82vw}.hero-copy{padding-top:calc(82vw + 2rem)}}
 </style>
