@@ -13,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     defer
   ></script>
 
-  <section class="page-hero">
+  <section class="page-hero contatti-hero">
     <div class="container">
       <p class="eyebrow">Contatti</p>
 
@@ -283,6 +283,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .contatti-hero {
+    min-height: 680px;
+    display: grid;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(5,6,7,.9) 0%, rgba(5,6,7,.46) 52%, rgba(5,6,7,.06) 100%), url('/images/hero-contatti-claudio.webp') center/cover no-repeat;
+  }
+
   .contact-grid {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
@@ -431,6 +438,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   @media (max-width: 850px) {
+    .contatti-hero {
+      min-height: 620px;
+      background-position: 62% center;
+    }
+
     .contact-grid {
       grid-template-columns: 1fr;
       gap: 3rem;

@@ -1,6 +1,13 @@
 ---
 const path = Astro.url.pathname;
-const links = [['Corsi','/corsi'],['Metodo','/metodo'],['Associazione','/associazione'],['FAQ','/#faq'],['Contatti','/contatti']];
+const links = [
+  ...(path === '/' ? [] : [['Home', '/']]),
+  ['Corsi','/corsi'],
+  ['Metodo','/metodo'],
+  ['Associazione','/associazione'],
+  ['FAQ','/#faq'],
+  ['Contatti','/contatti']
+];
 ---
 <header class="header">
   <div class="container bar">
@@ -20,9 +27,9 @@ const links = [['Corsi','/corsi'],['Metodo','/metodo'],['Associazione','/associa
  btn?.addEventListener('click',()=>{const open=nav?.classList.toggle('open')??false;btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');document.body.classList.toggle('menu-open',open)});
 </script>
 <style>
-.header{position:absolute;top:0;left:0;right:0;z-index:30;border-bottom:1px solid rgba(255,255,255,.14);background:linear-gradient(#0b0c0dcc,transparent)}
+.header{position:fixed;top:0;left:0;right:0;z-index:30;border-bottom:1px solid rgba(255,255,255,.14);background:rgba(11,12,13,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .bar{height:96px;display:flex;align-items:center;gap:2.5rem}
-.brand img{width:170px;height:auto;filter:brightness(0) invert(1)}
+.brand img{width:170px;height:auto}
 nav{margin-left:auto;display:flex;align-items:center;gap:1.8rem}
 nav a{color:#d5d5d2;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
 nav a:hover,nav a.active{color:#fff}

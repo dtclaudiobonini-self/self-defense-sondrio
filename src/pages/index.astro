@@ -52,7 +52,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="container wide-photo"><img src="/images/technique.webp" alt="Istruttore durante una dimostrazione tecnica" loading="lazy" /></div>
  </section>
  <section id="faq" class="section section-light faq-section">
-  <div class="container"><div class="section-head"><div><p class="eyebrow">Domande frequenti</p><h2>Prima di iniziare</h2></div></div>
+  <div class="faq-hero"><div class="container"><p class="eyebrow">Domande frequenti</p><h2>Prima di iniziare</h2></div></div>
+  <div class="container">
    <div class="faq">
     <details><summary>Serve esperienza?</summary><p>No. Le attività accompagnano anche chi parte da zero, con una progressione adatta al gruppo.</p></details>
     <details><summary>Devo essere già allenato?</summary><p>Non necessariamente. Il lavoro viene proposto in modo graduale. Eventuali esigenze fisiche vanno comunicate prima di iniziare.</p></details>
@@ -74,7 +75,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .story{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:start}
 .wide-photo{margin-top:5rem}.wide-photo img{width:100%;max-height:720px;object-fit:cover;object-position:center}
 .training{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('/images/training.webp')}
-.faq-section{padding-top:2rem}
+.faq-section{padding-top:0}
+.faq-hero{min-height:620px;display:grid;align-items:center;margin-bottom:5rem;color:var(--white);background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.45) 52%,rgba(5,6,7,.06) 100%),url('/images/hero-faq-claudio.webp') center/cover no-repeat}
 @media(max-width:800px){
  .hero{min-height:auto;display:block;overflow:hidden;background-color:var(--ink);background-image:url('/images/hero.webp');background-repeat:no-repeat;background-position:63% top;background-size:auto 76vw}
  .hero::before{content:'';position:absolute;z-index:1;inset:0 0 auto;height:76vw;background:linear-gradient(180deg,rgba(5,6,7,.35) 0%,transparent 35%,var(--ink) 100%)}
@@ -84,6 +86,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
  .scroll{display:none}
  .story{grid-template-columns:1fr;gap:2rem}
  .wide-photo{margin-top:3rem}
+ .faq-hero{min-height:560px;margin-bottom:3.5rem;background-position:63% center}
 }
 @media(max-width:420px){.hero{background-position:66% top;background-size:auto 82vw}.hero::before{height:82vw}.hero-copy{padding-top:calc(82vw + 2rem)}}
 </style>
