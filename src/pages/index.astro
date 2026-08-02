@@ -29,10 +29,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
  <section class="section section-light">
   <div class="container">
    <div class="section-head"><div><p class="eyebrow">I percorsi</p><h2>Allenati per la realtà</h2></div><p class="lead">Non serve esperienza. Ogni percorso sviluppa prevenzione, lucidità e risposte semplici attraverso un allenamento progressivo e controllato.</p></div>
-   <div class="grid-3">
+   <div class="grid-3 home-paths">
     <article class="card"><span class="card-number">01</span><h3>Difesa personale</h3><p>Un percorso completo per adulti dedicato a distanza, mobilità, gestione dello stress e principi pratici.</p><a class="text-link" href="/corsi#difesa-personale">Scopri il corso →</a></article>
     <article class="card"><span class="card-number">02</span><h3>Percorsi dedicati</h3><p>Attività per donne, piccoli gruppi e lezioni individuali, costruite sulle esigenze dei partecipanti.</p><a class="text-link" href="/corsi#percorsi">Vedi i percorsi →</a></article>
     <article class="card"><span class="card-number">03</span><h3>Enti e aziende</h3><p>Formazione per organizzazioni, operatori e gruppi con contenuti concordati sul contesto reale.</p><a class="text-link" href="/corsi#formazione">Parliamone →</a></article>
+    <article class="card"><span class="card-number">04</span><h3>Operatori sanitari</h3><p>Formazione per operatori sanitari e socio-sanitari dedicata alla prevenzione e alla gestione delle situazioni di rischio sul lavoro.</p><a class="text-link" href="/corsi#operatori-sanitari">Scopri la formazione →</a></article>
    </div>
   </div>
  </section>
@@ -74,6 +75,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .story{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:start}
 .wide-photo{margin-top:5rem}.wide-photo img{width:100%;max-height:720px;object-fit:cover;object-position:center}
 .training{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('/images/training.webp')}
+.home-paths{grid-template-columns:repeat(4,1fr)}
+.home-paths .card{display:grid;grid-template-rows:auto auto 1fr auto}
+.home-paths .card h3{align-self:start;margin:2rem 0 1rem}
+.home-paths .card p{margin:0}
 .faq-section{padding-top:0}
 .faq-hero{min-height:620px;display:grid;align-items:center;margin-bottom:5rem;color:var(--white);background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.45) 52%,rgba(5,6,7,.06) 100%),url('/images/hero-faq-claudio.webp') center/cover no-repeat}
 @media(max-width:800px){
@@ -85,6 +90,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
  .scroll{display:none}
  .story{grid-template-columns:1fr;gap:2rem}
  .wide-photo{margin-top:3rem}
+ .home-paths{grid-template-columns:1fr}
+ .home-paths .card{display:flex}
+ .home-paths .card h3{margin:auto 0 1rem}
+ .home-paths .card p{margin:0 0 1.2rem}
  .faq-hero{min-height:560px;margin-bottom:3.5rem;background-position:63% center}
 }
 @media(max-width:420px){.hero{background-position:66% top;background-size:auto 82vw}.hero::before{height:82vw}.hero-copy{padding-top:calc(82vw + 2rem)}}
