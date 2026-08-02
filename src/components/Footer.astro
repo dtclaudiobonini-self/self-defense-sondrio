@@ -1,3 +1,6 @@
+---
+import { primaryNavigation } from '../data/navigation';
+---
 <footer>
  <div class="container footer-grid">
   <div>
@@ -10,7 +13,7 @@
     E-mail: <a href="mailto:info@selfdefensesondrio.it">info@selfdefensesondrio.it</a>
    </address>
   </div>
-  <div><span>Esplora</span><a href="/corsi">Corsi</a><a href="/metodo">Metodo</a><a href="/associazione">Associazione</a></div>
+  <div><span>Esplora</span>{primaryNavigation.map(link => <a href={link.href}>{link.label}</a>)}</div>
   <div>
    <span>Contatti</span>
    <a href="tel:+393488963056">348 896 3056</a>
@@ -37,7 +40,7 @@
 <style>
 footer{padding:5rem 0 2rem;background:#070708;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1.4fr;gap:4rem}
-img{width:220px;height:auto;filter:brightness(0) invert(1);margin-bottom:1.5rem}
+img{width:220px;height:auto;margin-bottom:1.5rem}
 p{max-width:420px;color:var(--muted)}
 address{margin-top:1.5rem;color:#aaa;font-size:.78rem;font-style:normal;line-height:1.8}
 address strong{color:#ddd}

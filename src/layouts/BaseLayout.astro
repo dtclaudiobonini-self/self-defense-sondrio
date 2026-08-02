@@ -2,8 +2,17 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import CtaBand from '../components/CtaBand.astro';
 import '../styles/global.css';
-const {title='Self Defense Sondrio ASD',description='Corsi di difesa personale a Sondrio e Morbegno: prevenzione, consapevolezza e preparazione pratica.'}=Astro.props;
+const {
+ title='Self Defense Sondrio ASD',
+ description='Corsi di difesa personale a Sondrio e Morbegno: prevenzione, consapevolezza e preparazione pratica.',
+ ctaEyebrow,
+ ctaTitle,
+ ctaText,
+ ctaLabel,
+ ctaHref
+}=Astro.props;
 ---
 <!doctype html>
 <html lang="it">
@@ -21,6 +30,7 @@ const {title='Self Defense Sondrio ASD',description='Corsi di difesa personale a
   <a class="skip" href="#contenuto">Vai al contenuto</a>
   <Header />
   <main id="contenuto"><slot /></main>
+  <CtaBand eyebrow={ctaEyebrow} title={ctaTitle} text={ctaText} label={ctaLabel} href={ctaHref} />
   <Footer />
   <CookieConsent />
  </body>

@@ -1,0 +1,18 @@
+---
+const {
+  eyebrow = 'Inizia da qui',
+  title = 'Vuoi capire se è il percorso giusto per te?',
+  text,
+  label = 'Parla con noi →',
+  href = '/contatti'
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container">
+    <p class="eyebrow" style="color:white">{eyebrow}</p>
+    <h2>{title}</h2>
+    {text && <p class="lead">{text}</p>}
+    <div class="actions"><a class="button dark" href={href}>{label}</a></div>
+  </div>
+</section>

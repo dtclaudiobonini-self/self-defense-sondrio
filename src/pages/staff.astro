@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+// @ts-expect-error Il modulo è disponibile durante la build Astro; il progetto non include @types/node.
+import { readdirSync } from 'node:fs';
+
+const teacherFiles = readdirSync(new URL('../../public/images/Maestri/', import.meta.url)) as string[];
+const teacherImages = teacherFiles
+  .filter(file => /\.(avif|jpe?g|png|webp)$/i.test(file))
+  .sort((a, b) => a.localeCompare(b, 'it', { numeric: true }))
+  .map(file => `/images/Maestri/${encodeURIComponent(file)}`);
+
+const staff = [
+  { name: 'Claudio Bonini', role: 'Maestro', qualifications: 'Maestro di Ju Jitsu metodo Krav Maga · Maestro IV Dan Karate Shotokan' },
+  { name: 'Elisa', role: 'Istruttrice', qualifications: 'Istruttrice di Ju Jitsu metodo Krav Maga · Istruttrice I Dan Karate Shotokan' },
+  { name: 'Michele', role: 'Istruttore', qualifications: 'Istruttore di Ju Jitsu metodo Krav Maga · Istruttore IV Dan Karate Shotokan' },
+  { name: 'Marco', role: 'Istruttore', qualifications: 'Istruttore di Ju Jitsu metodo Krav Maga' }
+];
+
+const specializations = [
+  'Difesa da bastone',
+  'Uso di tonfa, baton e bastone distanziatore',
+  'Difesa da coltello',
+  'Difesa femminile',
+  'Difesa di una terza persona',
+  'Difesa da oggetti comuni',
+  'Difesa in spazi ristretti',
+  'Difesa a terra',
+  'Uso spray OC',
+  'Handcuffing',
+  'Carjacking'
+];
+
+const teachers = [
+  'Alfredo Defendi', 'Ciro Varone', 'Claudio Artusi', 'Cristian Burde',
+  'Daniel Zelnick', 'Drigo Genadiy', 'Eyal Yanilov', 'Franco De Bernardi',
+  'Gil Drucker', 'Hiroshi Shirai', 'Ilio Semino', 'Jean Tevini',
+  'Martin Luna', 'Massimo Fenu', 'Michele Scutaro', 'Nadia Ferluga',
+  'Nando Balzarro', 'Pedro Aneiros', 'Philippe Floch', 'Remo Grassetti',
+  'Riccio Massimo', 'Roberto De Ronzi', 'Vladimir Vasiliev'
+];
+---
+
+<BaseLayout title="Staff | Self Defense Sondrio ASD" description="Conosci lo staff e il percorso del M° Claudio Bonini di Self Defense Sondrio ASD." ctaEyebrow="Conosci lo staff" ctaTitle="Vieni ad allenarti con noi." ctaLabel="Richiedi informazioni →">
+  <section class="page-hero staff-hero">
+    <div class="container">
+      <p class="eyebrow">Le persone</p>
+      <h1>Il nostro staff.</h1>
+      <p class="lead">Esperienza, formazione continua e attenzione alle caratteristiche di ogni partecipante.</p>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head"><div><p class="eyebrow">La squadra</p><h2>Chi ti accompagna</h2></div><p class="lead">Maestri e istruttori condividono un metodo progressivo, concreto e responsabile.</p></div>
+      <div class="staff-grid">
+        {staff.map((person, index) => <article class:list={{featured:index === 0}}><span class="card-number">{String(index + 1).padStart(2, '0')}</span><p>{person.role}</p><h3>{person.name}</h3><p>{person.qualifications}</p>{index === 0 && <a class="text-link" href="#claudio-bonini">Scopri il percorso →</a>}</article>)}
+      </div>
+    </div>
+  </section>
+
+  <section id="claudio-bonini" class="section profile">
+    <div class="container profile-intro">
+      <div class="profile-image"><img src="/images/hero-metodo-claudio.webp" alt="Il Maestro Claudio Bonini durante una lezione" loading="lazy" /></div>
+      <div>
+        <p class="eyebrow">Maestro responsabile</p>
+        <h2>M° Claudio Bonini</h2>
+        <ul class="credentials">
+          <li>Maestro di difesa personale Ju Jitsu metodo Krav Maga, con circa 20 anni di esperienza</li>
+          <li>Maestro cintura nera IV Dan di Karate Shotokan, con circa 40 anni di esperienza</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container profile-body">
+      <div>
+        <p class="eyebrow">Il percorso</p>
+        <h3>Una vita nelle arti marziali</h3>
+      </div>
+      <div class="biography">
+        <p>Sono nato a Sondrio nel 1975 e sono sempre stato appassionato di sport. Alle elementari ho iniziato con lo sci e il Karate. Ho praticato lo sci anche a livello agonistico per alcuni anni, mentre ho voluto che il Karate rimanesse un’arte marziale.</p>
+        <p>Ho conosciuto il Ju Jitsu metodo Krav Maga nei primi anni Duemila e sono rimasto colpito dalla sua semplicità ed efficacia. Da allora ho continuato ad allenarmi e ad ampliare il mio bagaglio marziale partecipando a corsi di formazione e stage, praticando anche discipline come Sanda e Systema.</p>
+        <p>Oltre ai corsi annuali, ho tenuto numerosi percorsi formativi per le Forze dell’Ordine, corsi dedicati alle donne organizzati con diversi Comuni della provincia e lezioni individuali per esigenze specifiche.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light expertise">
+    <div class="container expertise-grid">
+      <div><p class="eyebrow">Competenze</p><h2>Specializzazioni</h2></div>
+      <ul>{specializations.map(item => <li>{item}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="section formation">
+    <div class="container formation-grid">
+      <div>
+        <p class="eyebrow">Formazione continua</p>
+        <h2>Maestri incontrati</h2>
+        <p class="lead">Alcuni dei Maestri con i quali ho avuto l’onore di allenarmi, in ordine alfabetico per nome.</p>
+      </div>
+      <div>
+        {teacherImages.length > 0 && <div class="teacher-slideshow" data-slideshow>
+          <div class="slides">
+            {teacherImages.map((src, index) => <img class:list={{active:index === 0}} src={src} alt={`Claudio Bonini durante un incontro formativo ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} />)}
+          </div>
+          <div class="slideshow-controls">
+            <button type="button" data-slide-prev aria-label="Foto precedente">←</button>
+            <p><span data-slide-current>1</span> / {teacherImages.length}</p>
+            <button type="button" data-slide-next aria-label="Foto successiva">→</button>
+          </div>
+        </div>}
+        <ul class="teachers">{teachers.map(teacher => <li>{teacher}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light diplomas">
+    <div class="container diploma-grid">
+      <div><p class="eyebrow">Qualifiche</p><h2>I diplomi</h2><figure class="diploma-overview"><img src="/images/diplomi-claudio-bonini.webp" alt="Raccolta dei diplomi e degli attestati conseguiti da Claudio Bonini" loading="lazy" /><figcaption>Una panoramica dei diplomi e degli attestati conseguiti nel corso degli anni.</figcaption></figure></div>
+      <div>
+        <p class="diploma-intro">Tra le numerose qualifiche conseguite, queste rappresentano tre dei riconoscimenti più significativi del percorso marziale e professionale.</p>
+        <div class="diploma-list">
+          <article><a href="/images/diploma-master-aki.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-master-aki.webp" alt="Diploma di Master AKI Krav Maga di Claudio Bonini" loading="lazy" /></a><div><span>01</span><h3>Diploma Master AKI Krav Maga</h3></div></article>
+          <article><a href="/images/diploma-master-asi.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-master-asi.webp" alt="Diploma nazionale Master di Krav Maga ASI di Claudio Bonini" loading="lazy" /></a><div><span>02</span><h3>Diploma Master Krav Maga ASI</h3></div></article>
+          <article><a href="/images/diploma-iv-dan-karate.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-iv-dan-karate.webp" alt="Diploma IV Dan Karate Shotokan FESIK di Claudio Bonini" loading="lazy" /></a><div><span>03</span><h3>IV Dan Karate Shotokan FESIK</h3></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-slideshow]').forEach((slideshow) => {
+    const slides = Array.from(slideshow.querySelectorAll<HTMLImageElement>('.slides img'));
+    const current = slideshow.querySelector<HTMLElement>('[data-slide-current]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    let timer: number | undefined;
+
+    const show = (next: number) => {
+      slides[index]?.classList.remove('active');
+      index = (next + slides.length) % slides.length;
+      slides[index]?.classList.add('active');
+      if (current) current.textContent = String(index + 1);
+    };
+    const stop = () => window.clearInterval(timer);
+    const play = () => {
+      stop();
+      if (!reducedMotion && slides.length > 1) timer = window.setInterval(() => show(index + 1), 4500);
+    };
+
+    slideshow.querySelector('[data-slide-prev]')?.addEventListener('click', () => { show(index - 1); play(); });
+    slideshow.querySelector('[data-slide-next]')?.addEventListener('click', () => { show(index + 1); play(); });
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', play);
+    slideshow.addEventListener('focusin', stop);
+    slideshow.addEventListener('focusout', play);
+    play();
+  });
+</script>
+
+<style>
+  .staff-hero{min-height:680px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(5,6,7,.92),rgba(5,6,7,.55) 55%,rgba(5,6,7,.1)),url('/images/hero-associazione-claudio.webp') center/cover no-repeat}
+  .staff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#c9c7c1}.staff-grid article{min-height:300px;padding:2rem;display:flex;flex-direction:column;background:#fff}.staff-grid article>p:first-of-type{margin:2rem 0 .4rem;color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.staff-grid h3{margin-bottom:1rem}.staff-grid article>p:last-of-type{color:#555}.staff-grid .text-link{margin-top:auto}
+  .profile-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:center}.profile-image img{width:100%;min-height:560px;object-fit:cover;object-position:67% center}.credentials{margin:2.5rem 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}.credentials li{padding:1.2rem 0;border-bottom:1px solid var(--line);color:#d2d1cd}
+  .profile-body{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(3rem,8vw,8rem);margin-top:7rem;padding-top:5rem;border-top:1px solid var(--line)}.profile-body h3{font-size:clamp(2.4rem,5vw,4.5rem)}.biography p{color:#c8c7c3}
+  .expertise-grid,.formation-grid,.diploma-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(3rem,8vw,8rem)}.expertise ul{display:grid;grid-template-columns:1fr 1fr;margin:0;padding:0;list-style:none;border-top:1px solid #c9c7c1}.expertise li{padding:1rem 0;border-bottom:1px solid #c9c7c1;color:#444}.expertise li:nth-child(odd){padding-right:1rem}.expertise li:nth-child(even){padding-left:1rem;border-left:1px solid #c9c7c1}
+  .teacher-slideshow{margin-bottom:3rem}.slides{position:relative;height:clamp(360px,45vw,600px);overflow:hidden;background:var(--ink-soft)}.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s ease}.slides img.active{opacity:1}.slideshow-controls{min-height:58px;display:flex;align-items:center;justify-content:flex-end;gap:1rem;border-bottom:1px solid var(--line)}.slideshow-controls p{min-width:4rem;margin:0;text-align:center;color:#aaa;font-size:.78rem;font-weight:800}.slideshow-controls button{width:42px;height:42px;border:1px solid var(--line);background:transparent;color:#fff;font-size:1.1rem;cursor:pointer}.slideshow-controls button:hover{border-color:var(--red);color:var(--red)}.teachers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}.teachers li{padding:.8rem .6rem .8rem 0;border-bottom:1px solid var(--line);color:#c8c7c3}
+  .diploma-overview{margin:3rem 0 0}.diploma-overview img{width:100%;aspect-ratio:4/3;object-fit:cover}.diploma-overview figcaption{margin-top:.75rem;color:#666;font-size:.78rem}.diploma-intro{max-width:680px;margin:0 0 2rem;color:#555;font-size:1.05rem}.diploma-list{display:grid;gap:1px;background:#c9c7c1}.diploma-list article{display:grid;grid-template-columns:minmax(240px,.9fr) 1.1fr;gap:2rem;align-items:center;padding:1.5rem;background:#fff}.diploma-list article>a{display:block;overflow:hidden;background:#e6e3dc}.diploma-list img{width:100%;aspect-ratio:1.42;object-fit:cover;transition:transform .25s ease}.diploma-list a:hover img{transform:scale(1.02)}.diploma-list span{color:var(--red);font-size:.75rem;font-weight:800}.diploma-list h3{margin-top:1.5rem}
+  @media(max-width:800px){.staff-hero{min-height:620px;background-position:62% center}.staff-grid,.profile-intro,.profile-body,.expertise-grid,.formation-grid,.diploma-grid{grid-template-columns:1fr}.profile-image img{min-height:70vw}.profile-body{margin-top:4rem;padding-top:3rem}.expertise ul{grid-template-columns:1fr}.expertise li:nth-child(odd),.expertise li:nth-child(even){padding-inline:0;border-left:0}.teachers{grid-template-columns:1fr 1fr}.diploma-list article{grid-template-columns:1fr}.diploma-list h3{margin-top:.75rem}}
+  @media(max-width:480px){.staff-grid,.teachers{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.slides img{transition:none}}
+</style>

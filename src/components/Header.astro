@@ -1,13 +1,8 @@
 ---
+import { primaryNavigation } from '../data/navigation';
+
 const path = Astro.url.pathname;
-const links = [
-  ...(path === '/' ? [] : [['Home', '/']]),
-  ['Corsi','/corsi'],
-  ['Metodo','/metodo'],
-  ['Associazione','/associazione'],
-  ['FAQ','/#faq'],
-  ['Contatti','/contatti']
-];
+const links = primaryNavigation.filter(link => path !== '/' || link.href !== '/');
 ---
 <header class="header">
   <div class="container bar">
@@ -15,7 +10,7 @@ const links = [
       <img src="/images/logo.webp" alt="Self Defense Sondrio ASD" width="178" height="64" />
     </a>
     <nav aria-label="Navigazione principale">
-      {links.map(([label,href]) => <a class:list={{active:path===href}} href={href}>{label}</a>)}
+      {links.map(link => <a class:list={{active:path===link.href}} href={link.href}>{link.label}</a>)}
     </nav>
     <a class="header-cta" href="/contatti">Richiedi una prova <span>→</span></a>
     <button class="menu" type="button" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
