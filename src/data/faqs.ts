@@ -5,7 +5,7 @@ export const faqs = [
   },
   {
     question: 'Devo essere già allenato?',
-    answer: 'Non necessariamente. Il lavoro viene proposto in modo graduale. Eventuali esigenze fisiche vanno comunicate prima di iniziare.'
+    answer: 'Non necessariamente. Il lavoro viene proposto in modo graduale e il Krav Maga si adatta a qualsiasi condizione fisica. Eventuali riserve o limitazioni fisiche vanno comunicate prima di iniziare.'
   },
   {
     question: 'Qual è il periodo dei corsi?',
@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     question: 'Qual è l’età minima?',
-    answer: 'L’età minima è 16 anni. Per chi ha meno di 16 anni è necessario contattare direttamente l’istruttore.'
+    answer: 'L’età minima è 16 anni. Per chi ha meno di 16 anni è necessario essere accompagnati da un genitore.'
   },
   {
     question: 'La prova è gratuita?',
