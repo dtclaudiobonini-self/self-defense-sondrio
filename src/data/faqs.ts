@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     question: 'Qual è l’età minima?',
-    answer: 'L’età minima è 16 anni. Per chi ha meno di 16 anni è necessario essere accompagnati da un genitore.'
+    answer: 'L’età minima è 16 anni, ma è comunque necessario il consenso scritto dei genitori, anche per la lezione di prova. Al di sotto dei 16 anni è necessario il nulla osta da parte del Consiglio Direttivo dell’ASD.'
   },
   {
     question: 'La prova è gratuita?',
