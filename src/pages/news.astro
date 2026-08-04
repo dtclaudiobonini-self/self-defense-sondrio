@@ -18,6 +18,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
      <h2>È online il nostro nuovo sito web</h2>
      <p class="lead">Un nuovo spazio digitale per raccontare con più chiarezza chi siamo, come lavoriamo e quali percorsi proponiamo.</p>
     </header>
+    <figure class="news-image website-preview">
+     <a href="/" aria-label="Visita la homepage di Self Defense Sondrio">
+      <img src="/images/news-nuovo-sito.webp" alt="Anteprima della homepage del nuovo sito di Self Defense Sondrio ASD" width="1200" height="630" loading="eager" decoding="async" />
+     </a>
+     <figcaption>La nuova homepage di Self Defense Sondrio ASD.</figcaption>
+    </figure>
     <div class="article-body">
      <p>Abbiamo realizzato il nuovo sito di Self Defense Sondrio ASD per rendere più semplice e immediato l’accesso alle informazioni sulle nostre attività.</p>
      <p>Nel sito puoi conoscere il nostro approccio alla difesa personale, consultare i corsi disponibili a Sondrio e Morbegno, scoprire lo staff e trovare tutte le indicazioni necessarie per partecipare a una prova.</p>
@@ -95,7 +101,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-.news-hero{background:radial-gradient(circle at 80% 15%,rgba(215,25,32,.3),transparent 28%),linear-gradient(135deg,#0b0c0d 55%,#17191b)}
+.news-hero{min-height:680px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(5,6,7,.92) 0%,rgba(5,6,7,.5) 52%,rgba(5,6,7,.08) 100%),url('/images/hero-news-v3.webp') center/cover no-repeat}
 .news-list{max-width:1080px}
 .news-article{scroll-margin-top:8rem}
 .archive-heading{margin:clamp(6rem,10vw,10rem) 0 4rem;padding-top:clamp(4rem,7vw,7rem);border-top:3px solid var(--red)}
@@ -104,6 +110,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .news-article header{padding-bottom:3.5rem;border-bottom:1px solid #cbc8c1}
 .news-image{width:min(100%,680px);margin:3.5rem 0 0 auto}.news-image a{display:block}.news-image img{width:100%;height:auto;object-fit:contain;box-shadow:0 16px 40px rgba(11,12,13,.15)}
 .news-image.seminar-image{width:min(100%,900px)}.news-image.seminar-image img{aspect-ratio:1280/1463}
+.news-image.website-preview{width:min(100%,900px)}.news-image.website-preview img{aspect-ratio:40/21;object-fit:cover}
 .news-image figcaption{margin-top:.75rem;color:#666;font-size:.75rem;text-align:right}
 .news-image.logo-image{width:min(100%,520px)}
 .news-meta{display:flex;gap:1rem;margin-bottom:2rem;color:#666;font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
@@ -113,5 +120,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .article-body{max-width:760px;margin:3.5rem 0 0 auto;font-size:1.08rem}
 .article-body p{margin-bottom:1.5rem}
 .article-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;margin-top:2.5rem}
-@media(max-width:800px){.news-article header{padding-bottom:2.5rem}.news-image{margin-top:2.5rem}.article-body{margin-top:2.5rem}.news-meta{flex-direction:column;gap:.2rem}}
+@media(max-width:800px){.news-hero{min-height:620px;background-position:63% center}.news-article header{padding-bottom:2.5rem}.news-image{margin-top:2.5rem}.article-body{margin-top:2.5rem}.news-meta{flex-direction:column;gap:.2rem}}
 </style>

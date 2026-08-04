@@ -62,7 +62,7 @@ const homepageFaqs = faqs.slice(2, 6);
    <article class="news-featured">
     <div class="news-date"><time datetime="2026-08-04"><strong>04</strong><span>AGO 2026</span></time></div>
     <div class="news-copy"><p class="eyebrow">Associazione</p><h3>È online il nostro nuovo sito web</h3><p>Uno spazio rinnovato per conoscere meglio il nostro metodo, scoprire i corsi attivi a Sondrio e Morbegno e contattarci in modo semplice e diretto.</p><a class="text-link" href="/news#nuovo-sito">Leggi la notizia →</a></div>
-    <a class="news-mark" href="/news#nuovo-sito" aria-label="Leggi la notizia sul nuovo sito"><span>SDS</span><small>Nuovo sito online</small></a>
+    <a class="news-mark news-thumbnail" href="/news#nuovo-sito" aria-label="Leggi la notizia sul nuovo sito"><img src="/images/news-nuovo-sito.webp" alt="Anteprima della homepage del nuovo sito" width="1200" height="630" loading="lazy" decoding="async" /><small>Nuovo sito online</small></a>
    </article>
   </div>
  </section>
@@ -98,6 +98,7 @@ const homepageFaqs = faqs.slice(2, 6);
 .news-date time{display:grid;text-align:center;line-height:1}.news-date strong{font:800 4rem 'Barlow Condensed';color:var(--white)}.news-date span{margin-top:.45rem;color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.14em}
 .news-copy{align-self:center;padding:3rem clamp(2rem,5vw,5rem)}.news-copy h3{max-width:700px;margin-bottom:1.3rem}.news-copy>p:not(.eyebrow){max-width:680px;color:#c7c6c2}
 .news-mark{display:grid;place-content:center;justify-items:center;background:var(--red);color:#fff;text-decoration:none;overflow:hidden}.news-mark span{font:800 7.5rem/.8 'Barlow Condensed';letter-spacing:-.06em}.news-mark small{margin-top:1.5rem;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.news-thumbnail{position:relative;display:block;background:var(--ink)}.news-thumbnail img{width:100%;height:100%;object-fit:cover}.news-thumbnail small{position:absolute;inset:auto 0 0;margin:0;padding:1rem 1.25rem;background:linear-gradient(transparent,rgba(5,6,7,.92));color:#fff;text-align:right}
 @media(max-width:1100px) and (min-width:801px){.home-paths{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
  .faq-section{scroll-margin-top:78px}
