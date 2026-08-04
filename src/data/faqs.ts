@@ -25,7 +25,7 @@ export const faqs = [
   },
   {
     question: 'Cosa porto alla prima lezione?',
-    answer: 'Abbigliamento ginnico comodo e scarpe da ginnastica pulite.'
+    answer: 'Abbigliamento sportivo comodo e scarpe da ginnastica pulite.'
   },
   {
     question: 'È richiesto il certificato medico?',
