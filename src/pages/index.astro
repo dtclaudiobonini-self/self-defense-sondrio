@@ -53,6 +53,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
   <div class="container wide-photo"><img src="/images/technique.webp" alt="Istruttore durante una dimostrazione tecnica" loading="lazy" /></div>
  </section>
+ <section class="section news-preview">
+  <div class="container">
+   <div class="section-head"><div><p class="eyebrow">News</p><h2>Dal nostro mondo</h2></div><p class="lead">Aggiornamenti sulle attività, i corsi e i progetti di Self Defense Sondrio ASD.</p></div>
+   <article class="news-featured">
+    <div class="news-date"><time datetime="2026-08-04"><strong>04</strong><span>AGO 2026</span></time></div>
+    <div class="news-copy"><p class="eyebrow">Associazione</p><h3>È online il nostro nuovo sito web</h3><p>Uno spazio rinnovato per conoscere meglio il nostro metodo, scoprire i corsi attivi a Sondrio e Morbegno e contattarci in modo semplice e diretto.</p><a class="text-link" href="/news#nuovo-sito">Leggi la notizia →</a></div>
+    <a class="news-mark" href="/news#nuovo-sito" aria-label="Leggi la notizia sul nuovo sito"><span>SDS</span><small>Nuovo sito online</small></a>
+   </article>
+  </div>
+ </section>
  <section id="faq" class="section section-light faq-section">
   <div class="faq-hero"><div class="container"><p class="eyebrow">Domande frequenti</p><h2>Prima di iniziare</h2></div></div>
   <div class="container">
@@ -82,6 +92,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .home-paths .card p{margin:0}
 .home-paths .text-link{white-space:nowrap;font-size:.72rem;letter-spacing:.06em}
 .faq-section{padding-top:0}
+.news-preview{background:var(--ink-soft)}
+.news-featured{display:grid;grid-template-columns:150px 1fr 300px;min-height:360px;border:1px solid var(--line)}
+.news-date{display:grid;place-items:center;border-right:1px solid var(--line)}
+.news-date time{display:grid;text-align:center;line-height:1}.news-date strong{font:800 4rem 'Barlow Condensed';color:var(--white)}.news-date span{margin-top:.45rem;color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.14em}
+.news-copy{align-self:center;padding:3rem clamp(2rem,5vw,5rem)}.news-copy h3{max-width:700px;margin-bottom:1.3rem}.news-copy>p:not(.eyebrow){max-width:680px;color:#c7c6c2}
+.news-mark{display:grid;place-content:center;justify-items:center;background:var(--red);color:#fff;text-decoration:none;overflow:hidden}.news-mark span{font:800 7.5rem/.8 'Barlow Condensed';letter-spacing:-.06em}.news-mark small{margin-top:1.5rem;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
 .faq-hero{min-height:620px;display:grid;align-items:center;margin-bottom:5rem;color:var(--white);background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.45) 52%,rgba(5,6,7,.06) 100%),url('/images/hero-faq-claudio.webp') center/cover no-repeat}
 @media(max-width:1100px) and (min-width:801px){.home-paths{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
@@ -97,6 +113,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
  .home-paths .card{display:flex}
  .home-paths .card h3{margin:auto 0 1rem}
  .home-paths .card p{margin:0 0 1.2rem}
+ .news-featured{grid-template-columns:1fr}.news-date{place-items:start;padding:1.5rem 2rem;border-right:0;border-bottom:1px solid var(--line)}.news-date time{display:flex;align-items:baseline;gap:.5rem}.news-date strong{font-size:2.5rem}.news-copy{padding:2.5rem 2rem}.news-mark{min-height:210px}.news-mark span{font-size:6rem}
  .faq-hero{min-height:560px;margin-bottom:3.5rem;background-position:63% center}
 }
 @media(max-width:420px){.hero{background-position:66% top;background-size:auto 82vw}.hero::before{height:82vw}.hero-copy{padding-top:calc(82vw + 2rem)}}
