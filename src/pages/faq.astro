@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faqs } from '../data/faqs';
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer }
+  }))
+};
+---
+
+<BaseLayout
+ title="FAQ | Self Defense Sondrio ASD"
+ description="Risposte alle domande frequenti sui corsi di difesa personale a Sondrio e Morbegno: prova gratuita, iscrizioni, età minima e certificato medico."
+ ctaEyebrow="Hai altre domande?"
+ ctaTitle="Parlane direttamente con noi."
+ ctaLabel="Contattaci →"
+>
+ <script is:inline type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+ <section class="page-hero faq-page-hero">
+  <div class="container"><p class="eyebrow">Domande frequenti</p><h1>Prima di iniziare.</h1><p class="lead">Tutto quello che serve sapere per avvicinarsi ai corsi e partecipare alla prima lezione.</p></div>
+ </section>
+ <section class="section section-light">
+  <div class="container faq-page">
+   <div class="faq">
+    {faqs.map(item => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}
+   </div>
+   <p class="contact-note">Non hai trovato la risposta che cercavi? <a href="/contatti">Scrivici direttamente</a>.</p>
+  </div>
+ </section>
+</BaseLayout>
+
+<style>
+ .faq-page-hero{background:radial-gradient(circle at 78% 15%,rgba(215,25,32,.22),transparent 32%)}
+ .faq-page{max-width:980px}.contact-note{margin:2.5rem auto 0;max-width:900px;color:#555}.contact-note a{color:var(--red);font-weight:800}
+</style>

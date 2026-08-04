@@ -4,10 +4,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { readdirSync } from 'node:fs';
 
 const teacherFiles = readdirSync(new URL('../../public/images/Maestri/', import.meta.url)) as string[];
+const teacherDimensions: Record<string, [number, number]> = {
+  'maestro-01.webp': [1600, 900], 'maestro-02.webp': [1600, 1200], 'maestro-03.webp': [1600, 2125],
+  'maestro-04.webp': [1600, 1065], 'maestro-05.webp': [1600, 2419], 'maestro-06.webp': [1600, 1366],
+  'maestro-07.webp': [1600, 2404], 'maestro-08.webp': [1600, 2134], 'maestro-09.webp': [1600, 2844],
+  'maestro-10.webp': [1600, 2134], 'maestro-11.webp': [1600, 1235], 'maestro-12.webp': [1600, 2134],
+  'maestro-13.webp': [1600, 1200], 'maestro-14.webp': [1600, 2449], 'maestro-15.webp': [1600, 2135],
+  'maestro-16.webp': [1600, 2682], 'maestro-17.webp': [1600, 2136], 'maestro-18.webp': [1600, 2404],
+  'maestro-19.webp': [1600, 2134], 'maestro-20.webp': [1600, 2134], 'maestro-21.webp': [1600, 2000],
+  'maestro-22.webp': [1600, 2407], 'maestro-23.webp': [1600, 1200], 'maestro-24.webp': [1600, 1200],
+  'maestro-25.webp': [1600, 1200], 'maestro-26.webp': [1600, 1470], 'maestro-27.webp': [1600, 1200],
+  'maestro-28.webp': [1600, 1064], 'maestro-29.webp': [1600, 1200], 'maestro-30.webp': [1600, 2421]
+};
 const teacherImages = teacherFiles
   .filter(file => /\.(avif|jpe?g|png|webp)$/i.test(file))
   .sort((a, b) => a.localeCompare(b, 'it', { numeric: true }))
-  .map(file => `/images/Maestri/${encodeURIComponent(file)}`);
+  .map(file => ({
+    src: `/images/Maestri/${encodeURIComponent(file)}`,
+    width: teacherDimensions[file]?.[0] ?? 1600,
+    height: teacherDimensions[file]?.[1] ?? 1200
+  }));
 
 const staff = [
   { name: 'Claudio Bonini', role: 'Maestro', qualifications: 'Maestro di Ju Jitsu metodo Krav Maga · Maestro IV Dan Karate Shotokan' },
@@ -60,7 +76,7 @@ const teachers = [
 
   <section id="claudio-bonini" class="section profile">
     <div class="container profile-intro">
-      <div class="profile-image"><img src="/images/hero-metodo-claudio.webp" alt="Il Maestro Claudio Bonini durante una lezione" loading="lazy" /></div>
+      <div class="profile-image"><img src="/images/hero-metodo-claudio.webp" alt="Il Maestro Claudio Bonini durante una lezione" width="1672" height="941" loading="lazy" decoding="async" /></div>
       <div>
         <p class="eyebrow">Maestro responsabile</p>
         <h2>M° Claudio Bonini</h2>
@@ -101,7 +117,7 @@ const teachers = [
       <div>
         {teacherImages.length > 0 && <div class="teacher-slideshow" data-slideshow>
           <div class="slides">
-            {teacherImages.map((src, index) => <img class:list={{active:index === 0}} src={src} alt={`Claudio Bonini durante un incontro formativo ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} />)}
+            {teacherImages.map((image, index) => <img class:list={{active:index === 0}} src={image.src} width={image.width} height={image.height} alt={`Claudio Bonini durante un incontro formativo ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />)}
           </div>
           <div class="slideshow-controls">
             <button type="button" data-slide-prev aria-label="Foto precedente">←</button>
@@ -116,13 +132,13 @@ const teachers = [
 
   <section class="section section-light diplomas">
     <div class="container diploma-grid">
-      <div><p class="eyebrow">Qualifiche</p><h2>I diplomi</h2><figure class="diploma-overview"><img src="/images/diplomi-claudio-bonini.webp" alt="Raccolta dei diplomi e degli attestati conseguiti da Claudio Bonini" loading="lazy" /><figcaption>Una panoramica dei diplomi e degli attestati conseguiti nel corso degli anni.</figcaption></figure></div>
+      <div><p class="eyebrow">Qualifiche</p><h2>I diplomi</h2><figure class="diploma-overview"><img src="/images/diplomi-claudio-bonini.webp" alt="Raccolta dei diplomi e degli attestati conseguiti da Claudio Bonini" width="1440" height="1080" loading="lazy" decoding="async" /><figcaption>Una panoramica dei diplomi e degli attestati conseguiti nel corso degli anni.</figcaption></figure></div>
       <div>
         <p class="diploma-intro">Tra le numerose qualifiche conseguite, queste rappresentano tre dei riconoscimenti più significativi del percorso marziale e professionale.</p>
         <div class="diploma-list">
-          <article><a href="/images/diploma-master-aki.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-master-aki.webp" alt="Diploma di Master AKI Krav Maga di Claudio Bonini" loading="lazy" /></a><div><span>01</span><h3>Diploma Master AKI Krav Maga</h3></div></article>
-          <article><a href="/images/diploma-master-asi.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-master-asi.webp" alt="Diploma nazionale Master di Krav Maga ASI di Claudio Bonini" loading="lazy" /></a><div><span>02</span><h3>Diploma Master Krav Maga ASI</h3></div></article>
-          <article><a href="/images/diploma-iv-dan-karate.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-iv-dan-karate.webp" alt="Diploma IV Dan Karate Shotokan FESIK di Claudio Bonini" loading="lazy" /></a><div><span>03</span><h3>IV Dan Karate Shotokan FESIK</h3></div></article>
+          <article><a href="/images/diploma-master-aki.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-master-aki.webp" alt="Diploma di Master AKI Krav Maga di Claudio Bonini" width="1800" height="1291" loading="lazy" decoding="async" /></a><div><span>01</span><h3>Diploma Master AKI Krav Maga</h3></div></article>
+          <article><a href="/images/diploma-master-asi.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-master-asi.webp" alt="Diploma nazionale Master di Krav Maga ASI di Claudio Bonini" width="1800" height="1245" loading="lazy" decoding="async" /></a><div><span>02</span><h3>Diploma Master Krav Maga ASI</h3></div></article>
+          <article><a href="/images/diploma-iv-dan-karate.webp" target="_blank" rel="noopener noreferrer"><img src="/images/diploma-iv-dan-karate.webp" alt="Diploma IV Dan Karate Shotokan FESIK di Claudio Bonini" width="1800" height="1281" loading="lazy" decoding="async" /></a><div><span>03</span><h3>IV Dan Karate Shotokan FESIK</h3></div></article>
         </div>
       </div>
     </div>

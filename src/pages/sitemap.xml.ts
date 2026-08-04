@@ -7,6 +7,7 @@ const routes = [
  '/metodo',
  '/associazione',
  '/news',
+ '/faq',
  '/contatti',
  '/privacy',
  '/cookie-policy'

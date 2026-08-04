@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import CtaBand from '../components/CtaBand.astro';
+import MobileContactCta from '../components/MobileContactCta.astro';
 import '../styles/global.css';
 const {
  title='Self Defense Sondrio ASD',
@@ -112,6 +113,7 @@ const structuredData = {
   <main id="contenuto"><slot /></main>
   <CtaBand eyebrow={ctaEyebrow} title={ctaTitle} text={ctaText} label={ctaLabel} href={ctaHref} />
   <Footer />
+  <MobileContactCta />
   <CookieConsent />
  </body>
 </html>
