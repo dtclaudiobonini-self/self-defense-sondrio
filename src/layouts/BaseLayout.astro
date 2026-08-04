@@ -13,6 +13,70 @@ const {
  ctaLabel,
  ctaHref
 }=Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://www.selfdefensesondrio.it');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const socialImageUrl = new URL('/og.png', siteUrl);
+const organizationId = new URL('/#organization', siteUrl).href;
+const structuredData = {
+ '@context': 'https://schema.org',
+ '@graph': [
+  {
+   '@type': 'Organization',
+   '@id': organizationId,
+   name: 'Self Defense Sondrio ASD',
+   url: siteUrl.href,
+   logo: new URL('/images/logo.webp', siteUrl).href,
+   image: socialImageUrl.href,
+   email: 'info@selfdefensesondrio.it',
+   telephone: '+39 348 896 3056',
+   address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Via delle Pergole, 2',
+    postalCode: '23100',
+    addressLocality: 'Sondrio',
+    addressRegion: 'SO',
+    addressCountry: 'IT'
+   },
+   sameAs: [
+    'https://www.facebook.com/claudioboninikm',
+    'https://www.instagram.com/selfdefensesondrio'
+   ],
+   location: [
+    { '@id': new URL('/#sede-sondrio', siteUrl).href },
+    { '@id': new URL('/#sede-morbegno', siteUrl).href }
+   ]
+  },
+  {
+   '@type': 'SportsActivityLocation',
+   '@id': new URL('/#sede-sondrio', siteUrl).href,
+   name: 'Self Defense Sondrio ASD – Sede di Sondrio',
+   parentOrganization: { '@id': organizationId },
+   address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Via Donegani, 3',
+    postalCode: '23100',
+    addressLocality: 'Sondrio',
+    addressRegion: 'SO',
+    addressCountry: 'IT'
+   }
+  },
+  {
+   '@type': 'SportsActivityLocation',
+   '@id': new URL('/#sede-morbegno', siteUrl).href,
+   name: 'Self Defense Sondrio ASD – Sede di Morbegno',
+   parentOrganization: { '@id': organizationId },
+   address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Via Bosi',
+    postalCode: '23017',
+    addressLocality: 'Morbegno',
+    addressRegion: 'SO',
+    addressCountry: 'IT'
+   }
+  }
+ ]
+};
 ---
 <!doctype html>
 <html lang="it">
@@ -21,9 +85,25 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
   <meta name="theme-color" content="#0b0c0d" />
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Self Defense Sondrio ASD" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:image" content={socialImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Self Defense Sondrio ASD: prevenzione, consapevolezza e preparazione" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={socialImageUrl} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <title>{title}</title>
  </head>
  <body>
