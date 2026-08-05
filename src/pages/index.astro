@@ -98,7 +98,7 @@ const homepageFaqs = faqs.slice(2, 6);
 .news-date time{display:grid;text-align:center;line-height:1}.news-date strong{font:800 4rem 'Barlow Condensed';color:var(--white)}.news-date span{margin-top:.45rem;color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.14em}
 .news-copy{align-self:center;padding:3rem clamp(2rem,5vw,5rem)}.news-copy h3{max-width:700px;margin-bottom:1.3rem}.news-copy>p:not(.eyebrow){max-width:680px;color:#c7c6c2}
 .news-mark{display:grid;place-content:center;justify-items:center;background:var(--red);color:#fff;text-decoration:none;overflow:hidden}.news-mark span{font:800 7.5rem/.8 'Barlow Condensed';letter-spacing:-.06em}.news-mark small{margin-top:1.5rem;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-.news-thumbnail{position:relative;display:block;background:var(--ink)}.news-thumbnail img{width:100%;height:100%;object-fit:cover}.news-thumbnail small{position:absolute;inset:auto 0 0;margin:0;padding:1rem 1.25rem;background:linear-gradient(transparent,rgba(5,6,7,.92));color:#fff;text-align:right}
+.news-thumbnail{position:relative;display:block;background:var(--ink)}.news-thumbnail img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}.news-thumbnail small{position:absolute;z-index:1;inset:auto 0 0;margin:0;padding:1rem 1.25rem;background:linear-gradient(transparent,rgba(5,6,7,.92));color:#fff;text-align:right}
 @media(max-width:1100px) and (min-width:801px){.home-paths{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){
  .faq-section{scroll-margin-top:78px}
