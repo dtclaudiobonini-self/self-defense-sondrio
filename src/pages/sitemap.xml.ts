@@ -14,7 +14,7 @@ const routes = [
 ];
 
 export const GET: APIRoute = ({ site }) => {
- const baseUrl = site ?? new URL('https://www.selfdefensesondrio.it');
+ const baseUrl = site ?? new URL('https://difesapersonalesondrio.it');
  const urls = routes
   .map(({ path, priority, changefreq }) => `  <url><loc>${new URL(path, baseUrl).href}</loc><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`)
   .join('\n');
