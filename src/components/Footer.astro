@@ -12,6 +12,10 @@ import { primaryNavigation } from '../data/navigation';
     Codice fiscale: 93039150144<br />
     E-mail: <a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a>
    </address>
+   <a class="aics-affiliation" href="https://www.aics.it/" target="_blank" rel="noopener noreferrer">
+    <span>Affiliata AiCS</span>
+    <img src="/images/logo-aics-2025.png" alt="AiCS — Associazione Italiana Cultura Sport APS" width="600" height="400" loading="lazy" decoding="async" />
+   </a>
   </div>
   <div><span>Esplora</span>{primaryNavigation.map(link => <a href={link.href}>{link.label}</a>)}</div>
   <div>
@@ -45,6 +49,8 @@ p{max-width:420px;color:var(--muted)}
 address{margin-top:1.5rem;color:#aaa;font-size:.78rem;font-style:normal;line-height:1.8}
 address strong{color:#ddd}
 address a{font-size:inherit;text-decoration:underline;text-underline-offset:.18em}
+.aics-affiliation{display:flex;flex-direction:column;align-items:flex-start;margin-top:2rem}
+.aics-affiliation img{width:190px;margin:0}
 .footer-grid>div:not(:first-child){display:flex;flex-direction:column;gap:.75rem}
 .socials{display:flex;gap:.65rem;margin-top:1rem}
 .socials a{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);color:#ddd;transition:.2s ease}
