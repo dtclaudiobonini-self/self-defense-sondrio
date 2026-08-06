@@ -271,6 +271,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         formMessage.className = 'form-message success';
 
         form.reset();
+        form.classList.add('is-submitted');
 
         if (window.turnstile) {
           window.turnstile.reset();
@@ -420,6 +421,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .form-message.success {
     color: #186a3b;
+  }
+
+  form.is-submitted > :not(.form-message) {
+    display: none;
+  }
+
+  form.is-submitted .form-message.success {
+    min-height: 0;
+    margin: 0;
+    padding: 1.5rem;
+    border: 1px solid #8fc7a7;
+    background: #edf8f1;
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
 
   .form-message.error {
