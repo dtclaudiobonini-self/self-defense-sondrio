@@ -8,6 +8,10 @@ import '../styles/global.css';
 const {
  title='Self Defense Sondrio ASD',
  description='Corsi di difesa personale a Sondrio e Morbegno: prevenzione, consapevolezza e preparazione pratica.',
+ socialImage='/og.png',
+ socialImageAlt='Self Defense Sondrio ASD: corsi di difesa personale a Sondrio e Morbegno',
+ pageType='WebPage',
+ robots='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
  ctaEyebrow,
  ctaTitle,
  ctaText,
@@ -18,8 +22,10 @@ const {
 
 const siteUrl = Astro.site ?? new URL('https://www.selfdefensesondrio.it');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
-const socialImageUrl = new URL('/og.png', siteUrl);
+const socialImageUrl = new URL(socialImage, siteUrl);
 const organizationId = new URL('/#organization', siteUrl).href;
+const websiteId = new URL('/#website', siteUrl).href;
+const pageId = `${canonicalUrl.href}#webpage`;
 const structuredData = {
  '@context': 'https://schema.org',
  '@graph': [
@@ -48,6 +54,26 @@ const structuredData = {
     { '@id': new URL('/#sede-sondrio', siteUrl).href },
     { '@id': new URL('/#sede-morbegno', siteUrl).href }
    ]
+  },
+  {
+   '@type': 'WebSite',
+   '@id': websiteId,
+   url: siteUrl.href,
+   name: 'Self Defense Sondrio ASD',
+   description: 'Corsi e formazione di difesa personale a Sondrio e Morbegno.',
+   inLanguage: 'it-IT',
+   publisher: { '@id': organizationId }
+  },
+  {
+   '@type': pageType,
+   '@id': pageId,
+   url: canonicalUrl.href,
+   name: title,
+   description,
+   inLanguage: 'it-IT',
+   isPartOf: { '@id': websiteId },
+   about: { '@id': organizationId },
+   primaryImageOfPage: { '@type': 'ImageObject', url: socialImageUrl.href }
   },
   {
    '@type': 'SportsActivityLocation',
@@ -86,8 +112,13 @@ const structuredData = {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
+  <meta name="robots" content={robots} />
+  <meta name="googlebot" content={robots} />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#0b0c0d" />
   <link rel="canonical" href={canonicalUrl} />
+  <link rel="alternate" hreflang="it-IT" href={canonicalUrl} />
+  <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
   {faviconHref
    ? <>
       <link rel="icon" type="image/png" sizes="64x64" href={faviconHref} />
@@ -107,13 +138,16 @@ const structuredData = {
   <meta property="og:site_name" content="Self Defense Sondrio ASD" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:image" content={socialImageUrl} />
+  <meta property="og:image:secure_url" content={socialImageUrl} />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Self Defense Sondrio ASD: prevenzione, consapevolezza e preparazione" />
+  <meta property="og:image:alt" content={socialImageAlt} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={socialImageUrl} />
+  <meta name="twitter:image:alt" content={socialImageAlt} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <title>{title}</title>
  </head>
