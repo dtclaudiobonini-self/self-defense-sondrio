@@ -41,10 +41,6 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
           <input type="checkbox" name="forms" />
         </label>
         <label class="cookie-option">
-          <span><strong>Google Maps</strong><small>Mappe e indicazioni incorporate</small></span>
-          <input type="checkbox" name="maps" />
-        </label>
-        <label class="cookie-option">
           <span><strong>YouTube</strong><small>Video incorporati nelle pagine</small></span>
           <input type="checkbox" name="youtube" />
         </label>
@@ -64,7 +60,7 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
   (() => {
     const STORAGE_KEY = 'sds-cookie-consent';
     const VERSION = 1;
-    const SERVICES = ['analytics', 'forms', 'maps', 'youtube'];
+    const SERVICES = ['analytics', 'forms', 'youtube'];
     const root = document.getElementById('cookie-consent');
     const form = document.getElementById('cookie-form');
     const options = document.getElementById('cookie-options');

@@ -49,10 +49,6 @@ const structuredData = {
    sameAs: [
     'https://www.facebook.com/claudioboninikm',
     'https://www.instagram.com/selfdefensesondrio'
-   ],
-   location: [
-    { '@id': new URL('/#sede-sondrio', siteUrl).href },
-    { '@id': new URL('/#sede-morbegno', siteUrl).href }
    ]
   },
   {
@@ -74,34 +70,6 @@ const structuredData = {
    isPartOf: { '@id': websiteId },
    about: { '@id': organizationId },
    primaryImageOfPage: { '@type': 'ImageObject', url: socialImageUrl.href }
-  },
-  {
-   '@type': 'SportsActivityLocation',
-   '@id': new URL('/#sede-sondrio', siteUrl).href,
-   name: 'Self Defense Sondrio ASD – Sede di Sondrio',
-   parentOrganization: { '@id': organizationId },
-   address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Via Donegani, 3',
-    postalCode: '23100',
-    addressLocality: 'Sondrio',
-    addressRegion: 'SO',
-    addressCountry: 'IT'
-   }
-  },
-  {
-   '@type': 'SportsActivityLocation',
-   '@id': new URL('/#sede-morbegno', siteUrl).href,
-   name: 'Self Defense Sondrio ASD – Sede di Morbegno',
-   parentOrganization: { '@id': organizationId },
-   address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Via Bosi',
-    postalCode: '23017',
-    addressLocality: 'Morbegno',
-    addressRegion: 'SO',
-    addressCountry: 'IT'
-   }
   }
  ]
 };
