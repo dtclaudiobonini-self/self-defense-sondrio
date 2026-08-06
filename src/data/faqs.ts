@@ -9,7 +9,7 @@ export const faqs = [
   },
   {
     question: 'Qual è il periodo dei corsi?',
-    answer: 'I corsi annuali si svolgono da settembre fino alla fine di giugno.'
+    answer: 'I corsi annuali si svolgono da settembre fino alla fine di maggio.'
   },
   {
     question: 'Posso iscrivermi durante l’anno?',
@@ -33,6 +33,6 @@ export const faqs = [
   },
   {
     question: 'Dove si svolgono i corsi?',
-    answer: 'Le attività principali si svolgono a Sondrio e Morbegno. Nella pagina corsi trovi sedi e orari.'
+    answer: 'Le attività principali si svolgono a Sondrio e Morbegno.'
   }
 ] as const;
