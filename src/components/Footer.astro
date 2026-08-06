@@ -1,10 +1,5 @@
 ---
 import { primaryNavigation } from '../data/navigation';
-
-const footerNavigation = primaryNavigation.flatMap(link => [
- link,
- ...('children' in link ? link.children : [])
-]);
 ---
 <footer>
  <div class="container footer-grid">
@@ -18,7 +13,7 @@ const footerNavigation = primaryNavigation.flatMap(link => [
     E-mail: <a href="mailto:info@difesapersonalesondrio.it">info@difesapersonalesondrio.it</a>
    </address>
   </div>
-  <div><span>Esplora</span>{footerNavigation.map(link => <a href={link.href}>{link.label}</a>)}</div>
+  <div><span>Esplora</span>{primaryNavigation.map(link => <a href={link.href}>{link.label}</a>)}</div>
   <div>
    <span>Contatti</span>
    <a href="tel:+393488963056">348 896 3056</a>

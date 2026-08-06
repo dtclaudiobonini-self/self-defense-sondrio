@@ -2,7 +2,6 @@
 import { primaryNavigation } from '../data/navigation';
 
 const path = Astro.url.pathname;
-const links = primaryNavigation.filter(link => path !== '/' || link.href !== '/');
 ---
 <header class="header">
   <div class="container bar">
@@ -10,16 +9,11 @@ const links = primaryNavigation.filter(link => path !== '/' || link.href !== '/'
       <img src="/images/logo.webp" alt="Self Defense Sondrio ASD" width="178" height="64" />
     </a>
     <nav id="main-navigation" aria-label="Navigazione principale">
-      {links.map(link => 'children' in link
-       ? <div class="nav-group">
-          <a class:list={{active:path===link.href || link.children.some(child => path === child.href)}} href={link.href}>{link.label}<span aria-hidden="true">⌄</span></a>
-          <div class="submenu">
-           {link.children.map(child => <a class:list={{active:path===child.href}} href={child.href}>{child.label}</a>)}
-          </div>
-         </div>
-       : <a class:list={{active:path===link.href}} href={link.href}>{link.label}</a>)}
+      {primaryNavigation.map(link =>
+        <a class:list={{active:path===link.href}} href={link.href}>{link.label}</a>
+      )}
+      <a class="header-cta" href="/contatti">Richiedi una prova <span>→</span></a>
     </nav>
-    <a class="header-cta" href="/contatti">Richiedi una prova <span>→</span></a>
     <button class="menu" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
   </div>
 </header>
@@ -54,17 +48,13 @@ const links = primaryNavigation.filter(link => path !== '/' || link.href !== '/'
 nav{margin-left:auto;display:flex;align-items:center;gap:1.8rem}
 nav a{color:#d5d5d2;font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
 nav a:hover,nav a.active{color:#fff}
-.nav-group{position:relative}.nav-group>a{display:flex;align-items:center;gap:.35rem}.nav-group>a span{color:var(--red);font-size:.8rem;transition:transform .2s ease}
-.submenu{position:absolute;top:calc(100% + 1.15rem);left:-1rem;display:none;min-width:180px;padding:.6rem;background:#0b0c0d;border:1px solid var(--line);box-shadow:0 16px 35px rgba(0,0,0,.35)}
-.submenu::before{content:'';position:absolute;right:0;bottom:100%;left:0;height:1.2rem}.submenu a{display:block;padding:.75rem .65rem}.nav-group:hover .submenu,.nav-group:focus-within .submenu{display:block}.nav-group:hover>a span,.nav-group:focus-within>a span{transform:rotate(180deg)}
 .header-cta{min-height:44px;display:flex;align-items:center;gap:.7rem;padding:0 1rem;background:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
 .menu{display:none;width:48px;height:48px;border:1px solid var(--line);background:transparent}
 .menu span{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
 @media(max-width:1180px){
- .bar{height:78px}.brand img{width:145px}.header-cta{margin-left:auto}.menu{display:block}
+ .bar{height:78px}.brand img{width:145px}.menu{display:block;margin-left:auto}
  nav{display:none;position:absolute;z-index:1;top:78px;right:0;left:0;height:calc(100svh - 78px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#0b0c0d;padding:2rem 1.5rem calc(7rem + env(safe-area-inset-bottom));flex-direction:column;align-items:flex-start;gap:0}
- nav.open{display:flex}nav>a,.nav-group{width:100%}nav>a,.nav-group>a{width:100%;padding:1rem 0;border-bottom:1px solid var(--line);font:700 2rem 'Barlow Condensed'}
- .nav-group>a span{margin-left:auto;font-size:1rem}.submenu{position:static;display:block;min-width:0;padding:0 0 .45rem 1.25rem;background:transparent;border:0;box-shadow:none}.submenu::before{display:none}.submenu a{width:100%;padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.08);font:700 1.3rem 'Barlow Condensed';color:#aaa}.nav-group:hover>a span,.nav-group:focus-within>a span{transform:none}
+ nav.open{display:flex}nav>a{width:100%;padding:1rem 0;border-bottom:1px solid var(--line);font:700 2rem 'Barlow Condensed'}
+ nav .header-cta{margin-top:1rem;padding-inline:1rem;border-bottom:0}
 }
-@media(max-width:560px){.header-cta{display:none}.menu{margin-left:auto}}
 </style>
