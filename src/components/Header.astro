@@ -2,6 +2,7 @@
 import { primaryNavigation } from '../data/navigation';
 
 const path = Astro.url.pathname;
+const links = primaryNavigation.filter(link => path !== '/' || link.href !== '/');
 ---
 <header class="header">
   <div class="container bar">
@@ -9,7 +10,7 @@ const path = Astro.url.pathname;
       <img src="/images/logo.webp" alt="Self Defense Sondrio ASD" width="178" height="64" />
     </a>
     <nav id="main-navigation" aria-label="Navigazione principale">
-      {primaryNavigation.map(link =>
+      {links.map(link =>
         <a class:list={{active:path===link.href}} href={link.href}>{link.label}</a>
       )}
       <a class="header-cta" href="/contatti">Richiedi una prova <span>→</span></a>
