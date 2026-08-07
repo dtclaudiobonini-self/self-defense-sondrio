@@ -70,8 +70,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h3>2.3 Statistiche aggregate Cloudflare</h3>
       <p>
         Il Titolare utilizza le statistiche HTTP aggregate fornite da Cloudflare e
-        riceve un report giornaliero con il numero di visite suddiviso tra i domini
-        che indirizzano al sito. Non vengono caricati Google Analytics o altri script
+        riceve un report giornaliero con il numero di visite suddiviso tra i nomi di
+        dominio monitorati. Non vengono caricati Google Analytics o altri script
         statistici nel browser e il sito non crea identificativi locali dei visitatori.
       </p>
       <p>
@@ -167,6 +167,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Il sito non utilizza cookie analitici, pubblicitari o di profilazione e non
         incorpora Google Forms o video YouTube. Utilizza soltanto strumenti tecnici
         di Cloudflare e Turnstile necessari alla sicurezza e al modulo contatti.
+        Il widget Turnstile è configurato senza pre-clearance: genera un token
+        temporaneo e monouso, ma non il cookie persistente <code>cf_clearance</code>.
         Per maggiori dettagli consulta la <a href="/cookie-policy">Cookie Policy</a>.
       </p>
       <p>

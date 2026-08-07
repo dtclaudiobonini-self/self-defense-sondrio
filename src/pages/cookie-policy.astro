@@ -51,12 +51,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <tr>
               <td>Cloudflare – sicurezza e distribuzione</td>
               <td>Protezione della rete, consegna delle pagine e mitigazione degli abusi.</td>
-              <td>Secondo la configurazione e le necessità tecniche di Cloudflare.</td>
+              <td>La navigazione ordinaria non richiede cookie facoltativi. Cloudflare può utilizzare cookie strettamente necessari soltanto quando attiva una verifica di sicurezza; la durata dipende dalla relativa configurazione tecnica.</td>
             </tr>
             <tr>
               <td>Cloudflare Turnstile</td>
               <td>Verifica anti-abuso del modulo contatti mediante segnali tecnici del browser e un token temporaneo.</td>
-              <td>Per il tempo necessario alla verifica; eventuali cookie tecnici dipendono dalla configurazione di sicurezza applicata.</td>
+              <td>Il token scade dopo 5 minuti e può essere verificato una sola volta. Il widget è configurato senza pre-clearance e non genera il cookie <code>cf_clearance</code>.</td>
             </tr>
           </tbody>
         </table>
@@ -74,7 +74,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         necessariamente al numero di visitatori unici.
       </p>
 
-      <h2>4. Collegamenti esterni</h2>
+      <h2>4. Configurazione Turnstile e <code>cf_clearance</code></h2>
+      <p>
+        Il widget Turnstile utilizzato dal sito è configurato con pre-clearance
+        disattivato (<code>no_clearance</code>). Al completamento della verifica viene
+        quindi generato il solo token temporaneo necessario all’invio del modulo e
+        non viene aggiunto il cookie <code>cf_clearance</code>.
+      </p>
+      <p>
+        Qualora in futuro il pre-clearance venisse abilitato, questa informativa sarà
+        aggiornata prima dell’attivazione indicando la finalità e la durata del cookie,
+        determinata dall’impostazione Cloudflare “Challenge Passage”.
+      </p>
+
+      <h2>5. Collegamenti esterni</h2>
       <p>
         Il sito contiene collegamenti a servizi esterni, come WhatsApp, Facebook,
         Instagram e siti istituzionali. Tali servizi non vengono incorporati nelle
@@ -82,20 +95,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ed è disciplinata dalle informative del sito di destinazione.
       </p>
 
-      <h2>5. Impostazioni del browser</h2>
+      <h2>6. Impostazioni del browser</h2>
       <p>
         È possibile eliminare o bloccare cookie e dati dei siti dalle impostazioni
         del browser. Il blocco degli strumenti tecnici di Cloudflare può compromettere
         la sicurezza del sito o impedire l’invio del modulo contatti.
       </p>
 
-      <h2>6. Informazioni dei fornitori</h2>
+      <h2>7. Informazioni dei fornitori</h2>
       <ul>
         <li><a href="https://www.cloudflare.com/it-it/privacypolicy/" target="_blank" rel="noopener noreferrer">Informativa privacy Cloudflare</a></li>
         <li><a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Informativa aggiuntiva Cloudflare Turnstile</a></li>
       </ul>
 
-      <h2>7. Titolare del trattamento</h2>
+      <h2>8. Titolare del trattamento</h2>
       <address>
         <strong>Self Defense Sondrio ASD</strong><br />
         Via delle Pergole, 2 – 23100 Sondrio<br />
