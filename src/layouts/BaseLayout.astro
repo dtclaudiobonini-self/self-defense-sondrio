@@ -22,6 +22,7 @@ const {
 
 const siteUrl = Astro.site ?? new URL('https://selfdefensesondrio.it');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const isContactPage = Astro.url.pathname === '/contatti' || Astro.url.pathname === '/contatti/';
 const socialImageUrl = new URL(socialImage, siteUrl);
 const organizationId = new URL('/#organization', siteUrl).href;
 const websiteId = new URL('/#website', siteUrl).href;
@@ -123,9 +124,9 @@ const structuredData = {
   <a class="skip" href="#contenuto">Vai al contenuto</a>
   <Header />
   <main id="contenuto"><slot /></main>
-  <CtaBand eyebrow={ctaEyebrow} title={ctaTitle} text={ctaText} label={ctaLabel} href={ctaHref} />
+  {!isContactPage && <CtaBand eyebrow={ctaEyebrow} title={ctaTitle} text={ctaText} label={ctaLabel} href={ctaHref} />}
   <Footer />
-  <MobileContactCta />
+  {!isContactPage && <MobileContactCta />}
   <CookieConsent />
  </body>
 </html>

@@ -18,7 +18,7 @@ const faqStructuredData = {
  description="Risposte alle domande frequenti sui corsi di difesa personale a Sondrio e Morbegno: prova gratuita, iscrizioni, età minima e certificato medico."
  ctaEyebrow="Hai altre domande?"
  ctaTitle="Parlane direttamente con noi."
- ctaLabel="Contattaci →"
+ ctaLabel="Prenota una prova →"
 >
  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
  <section class="page-hero faq-page-hero">
@@ -29,13 +29,12 @@ const faqStructuredData = {
    <div class="faq">
     {faqs.map(item => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}
    </div>
-   <p class="contact-note">Non hai trovato la risposta che cercavi? <a href="/contatti">Scrivici direttamente</a>.</p>
   </div>
  </section>
 </BaseLayout>
 
 <style>
  .faq-page-hero{min-height:680px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(5,6,7,.92) 0%,rgba(5,6,7,.5) 52%,rgba(5,6,7,.08) 100%),url('/images/hero-faq-archivio.webp') center/cover no-repeat}
- .faq-page{max-width:980px}.contact-note{margin:2.5rem auto 0;max-width:900px;color:#555}.contact-note a{color:var(--red);font-weight:800}
+ .faq-page{max-width:980px}
  @media(max-width:800px){.faq-page-hero{min-height:620px;background-position:63% center}}
 </style>

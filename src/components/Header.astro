@@ -13,7 +13,7 @@ const links = primaryNavigation.filter(link => path !== '/' || link.href !== '/'
       {links.map(link =>
         <a class:list={{active:path===link.href}} href={link.href}>{link.label}</a>
       )}
-      <a class="header-cta" href="/contatti">Richiedi una prova <span>→</span></a>
+      {path !== '/contatti' && path !== '/contatti/' && <a class="header-cta" href="/contatti">Prenota una prova <span>→</span></a>}
     </nav>
     <button class="menu" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
   </div>

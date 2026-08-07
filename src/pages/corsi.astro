@@ -8,7 +8,7 @@ const courses=[
  {id:'percorsi',num:'05',title:'Percorsi dedicati',tag:'Su richiesta',text:'Attività per donne, piccoli gruppi e lezioni individuali, definite in base agli obiettivi e al contesto.',meta:'Programmazione personalizzata'}
 ];
 ---
-<BaseLayout title="Corsi di difesa personale a Sondrio e Morbegno" description="Scopri corsi di difesa personale e Krav Maga a Sondrio e Morbegno, formazione per operatori, aziende e percorsi personalizzati. Prima prova gratuita." ctaEyebrow="Inizia da qui" ctaTitle="Hai dubbi prima di iniziare?" ctaText="Raccontaci cosa cerchi. Ti aiuteremo a scegliere con tranquillità." ctaLabel="Contattaci →">
+<BaseLayout title="Corsi di difesa personale a Sondrio e Morbegno" description="Scopri corsi di difesa personale e Krav Maga a Sondrio e Morbegno, formazione per operatori, aziende e percorsi personalizzati. Prima prova gratuita." ctaEyebrow="Inizia da qui" ctaTitle="Hai dubbi prima di iniziare?" ctaText="Raccontaci cosa cerchi. Ti aiuteremo a scegliere con tranquillità." ctaLabel="Prenota una prova →">
  <section class="page-hero corsi-hero"><div class="container"><p class="eyebrow">Corsi e formazione</p><h1>Trova il tuo percorso.</h1><p class="lead">Non serve avere esperienza né una preparazione atletica specifica. Scrivici per individuare l’attività più adatta.</p></div></section>
  <section class="section courses-intro">
   <div class="container editorial-grid">
@@ -38,7 +38,7 @@ const courses=[
   </div>
  </section>
  <section class="section section-light"><div class="container course-list">
-  {courses.map(c=><article id={c.id}><span>{c.num}</span><div><small>{c.tag}</small><h2>{c.title}</h2><p>{c.text}</p></div><div class="meta"><strong>{c.meta}</strong><a class="button dark" href="/contatti">Richiedi informazioni →</a></div></article>)}
+  {courses.map(c=><article id={c.id}><span>{c.num}</span><div><small>{c.tag}</small><h2>{c.title}</h2><p>{c.text}</p></div><div class="meta"><strong>{c.meta}</strong></div></article>)}
  </div></section>
  <section class="split"><div class="split-content"><p class="eyebrow">La pratica</p><h2>Graduale. Concreta. Responsabile.</h2><p class="lead">Ogni esercizio viene costruito con attenzione alla sicurezza, alla progressione e al rispetto dei partecipanti.</p><a class="text-link" href="/metodo">Scopri come lavoriamo →</a></div><div class="split-image pads" role="img" aria-label="Allenamento pratico di difesa personale"></div></section>
  <section id="operatori-sanitari-dettagli" class="section section-light healthcare">
