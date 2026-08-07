@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://difesapersonalesondrio.it/sitemap.xml
+Sitemap: https://selfdefensesondrio.it/sitemap.xml

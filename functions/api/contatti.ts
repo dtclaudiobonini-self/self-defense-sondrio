@@ -13,7 +13,7 @@ interface PagesContext<TEnv> {
   env: TEnv;
 }
 
-const CONTACT_EMAIL = "info@difesapersonalesondrio.it";
+const CONTACT_EMAIL = "info@selfdefensesondrio.it";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const jsonResponse = (message: string, status: number): Response =>

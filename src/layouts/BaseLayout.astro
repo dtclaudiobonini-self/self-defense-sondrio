@@ -20,7 +20,7 @@ const {
  faviconHref
 }=Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://difesapersonalesondrio.it');
+const siteUrl = Astro.site ?? new URL('https://selfdefensesondrio.it');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
 const socialImageUrl = new URL(socialImage, siteUrl);
 const organizationId = new URL('/#organization', siteUrl).href;
@@ -36,7 +36,7 @@ const structuredData = {
    url: siteUrl.href,
    logo: new URL('/images/logo.webp', siteUrl).href,
    image: socialImageUrl.href,
-   email: 'info@difesapersonalesondrio.it',
+   email: 'info@selfdefensesondrio.it',
    telephone: '+39 348 896 3056',
    address: {
     '@type': 'PostalAddress',
