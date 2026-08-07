@@ -4,12 +4,31 @@ const steps=[['01','Osservare','Leggere il contesto, riconoscere segnali di risc
 ---
 <BaseLayout title="Metodo di difesa personale | Self Defense Sondrio" description="Un metodo concreto di difesa personale basato su prevenzione, consapevolezza, gestione dello stress e risposte semplici e proporzionate.">
  <section class="page-hero metodo-hero"><div class="container"><p class="eyebrow">Il metodo</p><h1>La sicurezza parte dalla consapevolezza.</h1><p class="lead">La tecnica è solo una parte del percorso. Il lavoro parte dalla capacità di osservare, prevenire e prendere decisioni lucide.</p></div></section>
+ <section class="section method-overview">
+  <div class="container method-overview-grid">
+   <div class="method-overview-heading"><p class="eyebrow">Il nostro approccio</p><h2>Un metodo concreto, graduale e completo</h2></div>
+   <div class="method-overview-copy">
+    <p class="lead">Il nostro metodo unisce prevenzione, preparazione mentale e apprendimento di tecniche pratiche di difesa personale. L’obiettivo è fornire strumenti concreti per riconoscere una situazione di pericolo, gestirla con lucidità e, quando necessario, reagire in modo efficace e proporzionato.</p>
+    <p>In palestra si imparano e si allenano tecniche di pugno e di calcio, spostamenti, gestione delle distanze e protezioni. Il programma comprende inoltre difese da prese, strangolamenti, spinte e differenti forme di aggressione. Le tecniche vengono provate attraverso esercizi progressivi e simulazioni controllate, per renderle semplici, istintive e applicabili anche in condizioni di stress.</p>
+    <p>Il metodo nasce dall’esperienza del Maestro Claudio Bonini e si basa principalmente sul Krav Maga, integrando elementi provenienti da Karate, Ju Jitsu, Sanda, Boxe e Judo. Da queste discipline vengono selezionati movimenti essenziali ed efficaci, evitando soluzioni eccessivamente complesse o spettacolari.</p>
+    <p>Accanto alla preparazione fisica lavoriamo sulla gestione della paura, sulla capacità di osservare ciò che accade e sulla rapidità decisionale. Imparare una tecnica, infatti, significa anche capire quando utilizzarla e adattarla alla situazione.</p>
+    <p>Ogni esercizio viene svolto con gradualità, attenzione alla sicurezza e rispetto delle caratteristiche dei partecipanti. Non servono esperienza precedente o una particolare preparazione atletica: il percorso è accessibile a tutti e viene adattato alle persone e alle loro esigenze.</p>
+   </div>
+  </div>
+ </section>
  <section class="section section-light"><div class="container steps">{steps.map(s=><article><span>{s[0]}</span><h2>{s[1]}</h2><p>{s[2]}</p></article>)}</div></section>
  <section class="split"><div class="split-image" role="img" aria-label="Dimostrazione di una tecnica di difesa personale"></div><div class="split-content"><p class="eyebrow">Responsabilità</p><h2>Nessuna falsa promessa.</h2><p class="lead">Nessun corso può garantire sicurezza in ogni situazione. L’obiettivo è ampliare consapevolezza e possibilità di risposta, privilegiando prevenzione e allontanamento dal pericolo.</p><a class="button" href="/contatti">Vieni a conoscerci →</a></div></section>
 </BaseLayout>
 <style>
 .metodo-hero{min-height:680px;display:grid;align-items:center;background:linear-gradient(90deg,rgba(5,6,7,.9) 0%,rgba(5,6,7,.48) 52%,rgba(5,6,7,.08) 100%),url('/images/hero-metodo-archivio.webp') center/cover no-repeat}
+.method-overview{background:var(--ink-soft)}
+.method-overview-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(3rem,8vw,8rem);align-items:start}
+.method-overview-heading{position:sticky;top:7rem}
+.method-overview-heading h2{font-size:clamp(3.2rem,6vw,6rem)}
+.method-overview-copy{max-width:760px}
+.method-overview-copy p:not(.lead){color:#c8c7c3}
+.method-overview-copy p:last-child{margin-bottom:0}
 .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#ccc}
 .steps article{min-height:370px;background:var(--paper);padding:2.5rem;display:flex;flex-direction:column}.steps span{color:var(--red);font-weight:800}.steps h2{margin:auto 0 1rem;font-size:clamp(3rem,6vw,5rem)}.steps p{max-width:500px;color:#555}.split-image{background-image:url('/images/sezione-metodo-archivio.webp')}
-@media(max-width:700px){.metodo-hero{min-height:620px;background-position:60% center}.steps{grid-template-columns:1fr}}
+@media(max-width:700px){.metodo-hero{min-height:620px;background-position:60% center}.method-overview-grid{grid-template-columns:1fr;gap:2.5rem}.method-overview-heading{position:static}.steps{grid-template-columns:1fr}}
 </style>

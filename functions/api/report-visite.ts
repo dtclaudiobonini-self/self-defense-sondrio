@@ -77,20 +77,22 @@ export const onRequestPost = async (context: PagesContext): Promise<Response> =>
       subject: `Visite al sito — ${date}`,
       html: `
         <h1>Report visite del ${escapeHtml(date)}</h1>
-        <p>Visitatori giornalieri distinti per dominio, senza cookie.</p>
+        <p>Visite giornaliere rilevate da Cloudflare, suddivise per dominio.</p>
         <table style="border-collapse:collapse;min-width:480px">
           <thead><tr><th style="padding:8px 12px;text-align:left">Dominio</th><th style="padding:8px 12px;text-align:right">Visitatori</th></tr></thead>
           <tbody>${tableRows}</tbody>
-          <tfoot><tr><td style="padding:10px 12px"><strong>Totale per dominio</strong></td><td style="padding:10px 12px;text-align:right"><strong>${total}</strong></td></tr></tfoot>
+          <tfoot><tr><td style="padding:10px 12px"><strong>Totale visite</strong></td><td style="padding:10px 12px;text-align:right"><strong>${total}</strong></td></tr></tfoot>
         </table>
-        <p style="color:#666;font-size:13px">Il totale è la somma dei sei domini: la stessa persona che visita domini diversi può comparire più volte.</p>
+        <p style="color:#666;font-size:13px">Le visite Cloudflare non corrispondono necessariamente a persone uniche. La stessa persona può generare più visite e comparire su domini diversi.</p>
       `,
       text: [
         `Report visite del ${date}`,
         "",
         ...rows.map((row) => `${row.hostname}: ${row.visitors}`),
         "",
-        `Totale per dominio: ${total}`,
+        `Totale visite: ${total}`,
+        "",
+        "Nota: le visite Cloudflare non corrispondono necessariamente a persone uniche.",
       ].join("\n"),
     }),
   });
