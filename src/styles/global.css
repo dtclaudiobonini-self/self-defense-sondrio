@@ -39,7 +39,7 @@ h1,h2,h3,h4,h5,h6 { overflow-wrap: normal; word-break: normal; -webkit-hyphens: 
 h1 { font-size: clamp(4rem, 10vw, 9.5rem); }
 h2 { font-size: clamp(3.1rem, 7vw, 6.3rem); }
 h3 { font-size: clamp(1.65rem, 3vw, 2.4rem); }
-p { margin: 0 0 1.2rem; }
+p { margin: 0 0 1.2rem; font-size: 1.0625rem; }
 .lead { max-width: 42rem; color: #d2d1cd; font-size: clamp(1.05rem, 2vw, 1.3rem); }
 .section-light .lead { color: #4c4c49; }
 .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: .8rem; padding: .85rem 1.3rem; border: 1px solid var(--red); background: var(--red); color: white; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: .2s ease; cursor: pointer; }
@@ -52,7 +52,7 @@ p { margin: 0 0 1.2rem; }
 .card-number { color: var(--red); font: 700 1rem 'Barlow Condensed'; }
 .card h3 { margin: auto 0 1rem; }
 .card p { color: #565653; }
-.text-link { width: fit-content; margin-top: 1rem; color: var(--red); font-weight: 800; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.text-link { width: fit-content; margin-top: 1rem; color: var(--red); font-weight: 800; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
 .text-link:hover { text-decoration: underline; }
 .page-hero { padding: 10rem 0 5rem; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 80% 10%, rgba(215,25,32,.18), transparent 30%); }
 .page-hero h1 { max-width: 980px; }
@@ -64,7 +64,7 @@ p { margin: 0 0 1.2rem; }
 .fact { padding: 1.5rem; border-right: 1px solid var(--line); }
 .fact:last-child { border: 0; }
 .fact strong { display:block; font: 700 1.8rem 'Barlow Condensed'; text-transform:uppercase; }
-.fact span { color: var(--muted); font-size: .82rem; }
+.fact span { color: var(--muted); font-size: .95rem; }
 .faq { max-width: 900px; margin-inline: auto; border-top: 1px solid #ccc9c2; }
 details { border-bottom: 1px solid #ccc9c2; }
 summary { padding: 1.5rem 3rem 1.5rem 0; font: 700 1.35rem 'Barlow Condensed'; text-transform: uppercase; cursor:pointer; list-style:none; position:relative; }
