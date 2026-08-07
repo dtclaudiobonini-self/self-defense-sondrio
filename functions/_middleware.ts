@@ -57,7 +57,11 @@ export const onRequest = async (context: PagesContext): Promise<Response> => {
   const hostname = url.hostname.toLowerCase();
   const userAgent = request.headers.get("user-agent") ?? "";
   const acceptsHtml = request.headers.get("accept")?.includes("text/html");
-  const isPage = request.method === "GET" && acceptsHtml && response.ok;
+  const isPage =
+    request.method === "GET" &&
+    acceptsHtml &&
+    response.status >= 200 &&
+    response.status < 400;
 
   if (
     isPage &&
