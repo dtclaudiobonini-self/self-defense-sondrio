@@ -41,6 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <ul>
         <li>le funzioni tecniche e di sicurezza dell’infrastruttura Cloudflare;</li>
         <li>Cloudflare Turnstile, usato nel modulo contatti per contrastare invii automatici e abusi;</li>
+        <li>il conteggio statistico giornaliero per dominio, realizzato senza cookie e con identificativi tecnici cifrati e non reversibili;</li>
         <li>la memoria locale che conserva le preferenze selezionate nel banner.</li>
       </ul>
 
@@ -57,6 +58,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <td>Cloudflare Turnstile</td>
               <td>Verifica tecnica anti-abuso del modulo contatti.</td>
               <td>Secondo le modalità tecniche definite da Cloudflare.</td>
+            </tr>
+            <tr>
+              <td>Statistiche giornaliere del sito</td>
+              <td>Conta una sola visita giornaliera per dominio mediante un codice crittografico che non conserva IP o user agent in chiaro.</td>
+              <td>Massimo 35 giorni.</td>
             </tr>
           </tbody>
         </table>

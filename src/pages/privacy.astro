@@ -511,6 +511,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           sicurezza e prevenire abusi.
         </li>
         <li>
+          <strong>Statistiche anonime giornaliere:</strong> gli identificativi
+          tecnici cifrati utilizzati per evitare conteggi duplicati sono
+          conservati per un massimo di 35 giorni e poi eliminati.
+        </li>
+        <li>
           <strong>Log Cloudflare Access:</strong> secondo i tempi previsti dal
           servizio e dalla configurazione dell’account, salvo ulteriore
           conservazione necessaria per indagare su un incidente o tutelare un
@@ -545,7 +550,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         sito e non richiedono il consenso dell’utente.
       </p>
 
-      <h3>12.2 Cookie analitici</h3>
+      <h3>12.2 Statistiche anonime senza cookie</h3>
+
+      <p>
+        Il sito produce un conteggio statistico giornaliero distinto per dominio
+        senza installare cookie nel browser. Per evitare conteggi duplicati,
+        indirizzo IP e user agent vengono combinati con una chiave riservata e
+        trasformati immediatamente in un codice crittografico non reversibile.
+        Il dato grezzo non viene memorizzato e il codice cambia ogni giorno.
+      </p>
+
+      <h3>12.3 Cookie analitici</h3>
 
       <p>
         Previo consenso, il sito utilizza Google Analytics 4 per produrre
@@ -585,7 +600,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         solamente dopo il consenso.
       </p>
 
-      <h3>12.3 Cookie e strumenti di contenuti esterni</h3>
+      <h3>12.4 Cookie e strumenti di contenuti esterni</h3>
 
       <p>
         YouTube e Google Forms possono utilizzare cookie,
@@ -622,7 +637,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </li>
       </ul>
 
-      <h3>12.4 Gestione del consenso</h3>
+      <h3>12.5 Gestione del consenso</h3>
 
       <p>
         Al primo accesso il sito presenta un banner che permette di:

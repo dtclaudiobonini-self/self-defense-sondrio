@@ -1,0 +1,19 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "self-defense-visitor-report",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-07",
+  "triggers": {
+    "crons": ["30 6 * * *"]
+  },
+  "vars": {
+    "REPORT_ENDPOINT": "https://selfdefensesondrio.it/api/report-visite"
+  },
+  "d1_databases": [
+    {
+      "binding": "STATS_DB",
+      "database_name": "self-defense-visitor-stats",
+      "database_id": "f06c0f2c-60ab-412e-ba09-ce7099531744"
+    }
+  ]
+}

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "stats:deploy": "wrangler deploy --config workers/visitor-report/wrangler.jsonc",
+    "stats:types": "wrangler types --config workers/visitor-report/wrangler.jsonc workers/visitor-report/worker-configuration.d.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -14,5 +16,8 @@
     "@fontsource/manrope": "^5.3.0",
     "astro": "^5.18.2",
     "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "wrangler": "^4.119.0"
   }
 }
