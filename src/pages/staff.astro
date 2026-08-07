@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-// @ts-expect-error Il modulo è disponibile durante la build Astro; il progetto non include @types/node.
 import { readdirSync } from 'node:fs';
 
 const teacherFiles = readdirSync(new URL('../../public/images/Maestri/', import.meta.url)) as string[];

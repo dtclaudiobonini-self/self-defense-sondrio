@@ -1,8 +1,3 @@
 name = "self-defense-sondrio"
 pages_build_output_dir = "./dist"
 compatibility_date = "2026-07-14"
-
-[[d1_databases]]
-binding = "STATS_DB"
-database_name = "self-defense-visitor-stats"
-database_id = "f06c0f2c-60ab-412e-ba09-ce7099531744"

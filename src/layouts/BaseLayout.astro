@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import CookieConsent from '../components/CookieConsent.astro';
 import CtaBand from '../components/CtaBand.astro';
 import MobileContactCta from '../components/MobileContactCta.astro';
 import '../styles/global.css';
@@ -127,6 +126,5 @@ const structuredData = {
   {!isContactPage && <CtaBand eyebrow={ctaEyebrow} title={ctaTitle} text={ctaText} label={ctaLabel} href={ctaHref} />}
   <Footer />
   {!isContactPage && <MobileContactCta />}
-  <CookieConsent />
  </body>
 </html>

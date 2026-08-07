@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://selfdefensesondrio.it',
-  output: 'static'
+  output: 'static',
+  integrations: [
+    sitemap()
+  ]
 });

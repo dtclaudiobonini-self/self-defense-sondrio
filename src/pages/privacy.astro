@@ -6,865 +6,219 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow">Informativa</p>
-      <h1>Privacy e Cookie Policy.</h1>
+      <h1>Privacy Policy.</h1>
     </div>
   </section>
 
   <section class="section section-light">
     <div class="container legal">
-      <p class="last-update">
-        <strong>Ultimo aggiornamento:</strong> 1° agosto 2026
-      </p>
+      <p class="last-update"><strong>Ultimo aggiornamento:</strong> 7 agosto 2026</p>
 
       <p>
-        La presente informativa descrive le modalità di trattamento dei dati
-        personali degli utenti che visitano e utilizzano il sito di Self Defense
-        Sondrio ASD, ai sensi degli articoli 12 e 13 del Regolamento (UE)
-        2016/679 (“GDPR”), del Decreto legislativo 196/2003 e della normativa
-        italiana applicabile in materia di cookie e strumenti di tracciamento.
+        La presente informativa descrive il trattamento dei dati personali degli
+        utenti del sito di Self Defense Sondrio ASD ai sensi degli articoli 12 e 13
+        del Regolamento (UE) 2016/679 (“GDPR”) e del Decreto legislativo 196/2003.
       </p>
 
       <h2>1. Titolare del trattamento</h2>
-
-      <p>Il Titolare del trattamento è:</p>
-
       <address>
         <strong>Self Defense Sondrio ASD</strong><br />
         Sede legale: Via delle Pergole, 2 – 23100 Sondrio<br />
         Codice fiscale: 93039150144<br />
-        E-mail:
-        <a href="mailto:info@selfdefensesondrio.it">
-          info@selfdefensesondrio.it
-        </a>
+        E-mail: <a href="mailto:info@selfdefensesondrio.it">info@selfdefensesondrio.it</a>
       </address>
-
-      <p>
-        Per informazioni sul trattamento dei dati personali o per esercitare i
-        propri diritti è possibile contattare il Titolare all’indirizzo email
-        sopra indicato.
-      </p>
 
       <h2>2. Dati personali trattati</h2>
 
-      <h3>2.1 Dati forniti volontariamente</h3>
-
-      <p>
-        Quando l’utente contatta l’Associazione tramite email o compila un
-        modulo Google Forms possono essere raccolti:
-      </p>
-
+      <h3>2.1 Modulo contatti e comunicazioni</h3>
+      <p>Quando l’utente invia il modulo del sito o scrive all’Associazione possono essere trattati:</p>
       <ul>
         <li>nome e cognome;</li>
         <li>indirizzo email;</li>
-        <li>numero di telefono, se richiesto o fornito volontariamente;</li>
-        <li>informazioni relative al corso, evento o lezione di interesse;</li>
-        <li>contenuto della richiesta o del messaggio;</li>
-        <li>risposte inserite nei moduli;</li>
-        <li>data e ora di invio della richiesta;</li>
-        <li>
-          eventuali ulteriori informazioni fornite volontariamente
-          dall’interessato.
-        </li>
+        <li>numero di telefono, se fornito;</li>
+        <li>corso o attività di interesse;</li>
+        <li>contenuto del messaggio;</li>
+        <li>data, ora e informazioni tecniche relative all’invio.</li>
       </ul>
-
       <p>
-        Il modulo contatti presente direttamente sul sito apre l’applicazione
-        email dell’utente e non archivia autonomamente i dati nel sito. I dati
-        vengono trattati dal servizio di posta elettronica utilizzato
-        dall’utente e da quello utilizzato dall’Associazione.
+        Il modulo viene elaborato dal sito e trasmesso via email all’Associazione.
+        Non viene aperta automaticamente l’applicazione email dell’utente e i dati
+        non vengono salvati in un archivio applicativo del sito.
+      </p>
+      <p>
+        Si invita a non inserire dati relativi alla salute o altre categorie
+        particolari di dati, salvo quando strettamente necessario e concordato.
+        Le richieste dei minori devono essere inviate o autorizzate da chi esercita
+        la responsabilità genitoriale.
       </p>
 
-      <p>
-        Si invita l’utente a non inserire nei messaggi o nei moduli dati relativi
-        alla salute o altre categorie particolari di dati personali, salvo che
-        ciò sia espressamente richiesto e strettamente necessario. Per i minori,
-        i moduli e le richieste devono essere compilati o autorizzati da chi
-        esercita la responsabilità genitoriale.
-      </p>
-
-      <h3>2.2 Dati tecnici di navigazione</h3>
-
-      <p>
-        I sistemi informatici utilizzati per il funzionamento e la sicurezza del
-        sito possono trattare automaticamente:
-      </p>
-
+      <h3>2.2 Navigazione, sicurezza e Cloudflare Turnstile</h3>
+      <p>I sistemi che distribuiscono e proteggono il sito possono trattare:</p>
       <ul>
-        <li>indirizzo IP;</li>
-        <li>data e ora della richiesta;</li>
-        <li>pagina o risorsa richiesta;</li>
-        <li>tipo di browser, dispositivo e sistema operativo;</li>
-        <li>pagina di provenienza e pagina di destinazione;</li>
-        <li>intestazioni tecniche della connessione;</li>
-        <li>identificativi tecnici della richiesta e della sessione;</li>
-        <li>dati relativi a errori, anomalie e sicurezza della connessione.</li>
+        <li>indirizzo IP, data e ora della richiesta;</li>
+        <li>pagina o risorsa richiesta e pagina di provenienza;</li>
+        <li>browser, dispositivo, sistema operativo e intestazioni tecniche;</li>
+        <li>identificativi tecnici, errori ed eventi di sicurezza;</li>
+        <li>segnali del browser, token temporaneo ed esito della verifica Turnstile.</li>
       </ul>
-
       <p>
-        Questi dati sono necessari per rendere disponibile il sito, garantirne
-        la sicurezza, prevenire abusi e diagnosticare problemi tecnici.
+        Turnstile viene caricato nella pagina Contatti ed è necessario per limitare
+        invii automatici e abusi. Il token generato viene verificato sul server
+        tramite Cloudflare prima dell’invio del messaggio.
       </p>
 
-      <h3>2.3 Dati trattati tramite Cloudflare Access</h3>
-
+      <h3>2.3 Statistiche aggregate Cloudflare</h3>
       <p>
-        L’accesso al sito o ad alcune sue sezioni può essere riservato agli
-        indirizzi email preventivamente autorizzati mediante Cloudflare Access.
-        In questo caso possono essere trattati:
+        Il Titolare utilizza le statistiche HTTP aggregate fornite da Cloudflare e
+        riceve un report giornaliero con il numero di visite suddiviso tra i domini
+        che indirizzano al sito. Non vengono caricati Google Analytics o altri script
+        statistici nel browser e il sito non crea identificativi locali dei visitatori.
       </p>
-
-      <ul>
-        <li>indirizzo email utilizzato per l’autenticazione;</li>
-        <li>indirizzo IP e informazioni tecniche del dispositivo;</li>
-        <li>data e ora del tentativo di accesso;</li>
-        <li>esito positivo o negativo dell’autenticazione;</li>
-        <li>identificativi tecnici della sessione e della richiesta;</li>
-        <li>
-          informazioni necessarie alla generazione e all’invio del codice
-          temporaneo di accesso.
-        </li>
-      </ul>
-
       <p>
-        Il codice temporaneo viene inviato esclusivamente all’indirizzo email
-        inserito dall’utente, se tale indirizzo è autorizzato dalla regola di
-        accesso. Cloudflare Access registra gli eventi di autenticazione per
-        consentire il controllo degli accessi e la verifica di attività
-        sospette.
-      </p>
-
-      <h3>2.4 Dati raccolti tramite Google Analytics 4</h3>
-
-      <p>
-        Previo consenso dell’utente, Google Analytics 4 può raccogliere dati
-        relativi all’utilizzo del sito, tra cui:
-      </p>
-
-      <ul>
-        <li>pagine visitate e durata indicativa della visita;</li>
-        <li>interazioni con le pagine e gli elementi del sito;</li>
-        <li>provenienza approssimativa della visita;</li>
-        <li>tipo di dispositivo, browser e sistema operativo;</li>
-        <li>identificatori online memorizzati tramite cookie;</li>
-        <li>dati geografici approssimativi;</li>
-        <li>eventi tecnici relativi alla navigazione.</li>
-      </ul>
-
-      <p>
-        Google dichiara che in Google Analytics 4 gli indirizzi IP vengono
-        utilizzati durante la raccolta per determinare informazioni geografiche
-        approssimative e successivamente eliminati prima della registrazione nei
-        propri sistemi.
-      </p>
-
-      <p>
-        Google Analytics viene attivato solamente dopo il consenso dell’utente.
-        Non vengono inviati intenzionalmente a Google Analytics nome, email,
-        numero di telefono o altre informazioni che permettano
-        l’identificazione diretta dell’utente.
+        La metrica Cloudflare “visite” è un dato statistico sul traffico: non consente
+        al Titolare di identificare direttamente una persona e non coincide
+        necessariamente con il numero di persone uniche.
       </p>
 
       <h2>3. Finalità e basi giuridiche</h2>
-
       <div class="table-wrapper">
         <table>
-          <thead>
-            <tr>
-              <th>Finalità</th>
-              <th>Base giuridica</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Finalità</th><th>Base giuridica</th></tr></thead>
           <tbody>
             <tr>
-              <td>
-                Rispondere alle richieste relative a corsi, eventi, lezioni di
-                prova e attività dell’Associazione.
-              </td>
-              <td>
-                Esecuzione di misure richieste dall’interessato, articolo 6,
-                paragrafo 1, lettera b), GDPR.
-              </td>
+              <td>Rispondere a richieste su corsi, attività e lezioni di prova.</td>
+              <td>Misure richieste dall’interessato, articolo 6, paragrafo 1, lettera b), GDPR.</td>
             </tr>
             <tr>
-              <td>
-                Gestire iscrizioni, prenotazioni o richieste inviate tramite
-                Google Forms.
-              </td>
-              <td>
-                Esecuzione di misure precontrattuali o di un rapporto con
-                l’interessato, articolo 6, paragrafo 1, lettera b), GDPR.
-              </td>
+              <td>Distribuire e proteggere il sito, verificare il modulo, prevenire abusi e risolvere problemi tecnici.</td>
+              <td>Legittimo interesse alla sicurezza e affidabilità dei servizi, articolo 6, paragrafo 1, lettera f), GDPR.</td>
             </tr>
             <tr>
-              <td>
-                Gestire l’accesso riservato e impedire accessi non autorizzati.
-              </td>
-              <td>
-                Legittimo interesse del Titolare alla protezione dei contenuti e
-                dei sistemi, articolo 6, paragrafo 1, lettera f), GDPR.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Garantire il funzionamento e la sicurezza del sito, prevenire
-                abusi e risolvere problemi tecnici.
-              </td>
-              <td>
-                Legittimo interesse del Titolare, articolo 6, paragrafo 1,
-                lettera f), GDPR.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Elaborare statistiche sull’utilizzo del sito tramite Google
-                Analytics 4.
-              </td>
-              <td>
-                Consenso dell’utente, articolo 6, paragrafo 1, lettera a), GDPR
-                e articolo 122 del Decreto legislativo 196/2003.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Mostrare contenuti incorporati di YouTube e Google Forms.
-              </td>
-              <td>
-                Consenso dell’utente, articolo 6, paragrafo 1, lettera a), GDPR
-                e articolo 122 del Decreto legislativo 196/2003.
-              </td>
+              <td>Produrre statistiche aggregate sul traffico e controllare il funzionamento dei domini.</td>
+              <td>Legittimo interesse a comprendere l’utilizzo e garantire l’efficienza del sito, articolo 6, paragrafo 1, lettera f), GDPR.</td>
             </tr>
             <tr>
               <td>Adempiere a obblighi di legge.</td>
-              <td>
-                Adempimento di un obbligo legale, articolo 6, paragrafo 1,
-                lettera c), GDPR.
-              </td>
+              <td>Articolo 6, paragrafo 1, lettera c), GDPR.</td>
             </tr>
             <tr>
               <td>Accertare, esercitare o difendere un diritto.</td>
-              <td>
-                Legittimo interesse del Titolare, articolo 6, paragrafo 1,
-                lettera f), GDPR.
-              </td>
+              <td>Legittimo interesse del Titolare, articolo 6, paragrafo 1, lettera f), GDPR.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <h2>4. Conferimento dei dati</h2>
-
       <p>
-        Il conferimento dei dati contenuti nelle comunicazioni e nei moduli è
-        facoltativo. Tuttavia, senza i dati indicati come necessari potrebbe non
-        essere possibile rispondere alla richiesta, gestire una prenotazione o
-        completare un’iscrizione.
+        L’invio di una richiesta è facoltativo. I campi indicati come obbligatori
+        sono necessari per rispondere; senza tali informazioni il modulo non può
+        essere inviato. La presa visione dell’informativa non costituisce consenso
+        a finalità promozionali e i dati non vengono usati per newsletter.
       </p>
 
+      <h2>5. Modalità del trattamento e destinatari</h2>
       <p>
-        Per accedere alle sezioni protette è necessario utilizzare uno degli
-        indirizzi email preventivamente autorizzati. In assenza di un indirizzo
-        autorizzato non sarà possibile accedere ai contenuti riservati.
+        Il trattamento avviene con strumenti informatici e misure adeguate a ridurre
+        i rischi di perdita, accesso non autorizzato o uso illecito. Possono trattare
+        dati, limitatamente ai rispettivi servizi:
       </p>
-
-      <p>
-        Il consenso ad Analytics e ai contenuti incorporati di terze parti è
-        facoltativo. Il rifiuto non impedisce di consultare le parti ordinarie
-        del sito, ma i contenuti YouTube o Google Forms incorporati
-        potrebbero non essere caricati.
-      </p>
-
-      <h2>5. Google Forms</h2>
-
-      <p>
-        Il sito può utilizzare moduli forniti da Google Forms per raccogliere
-        richieste di informazioni, prenotazioni, manifestazioni di interesse o
-        iscrizioni alle attività.
-      </p>
-
-      <p>
-        Quando l’utente autorizza il caricamento del modulo, il browser stabilisce
-        una connessione con Google. Google può ricevere l’indirizzo IP,
-        informazioni sul dispositivo e sul browser, dati tecnici della richiesta
-        ed eventuali cookie o identificativi associati all’account Google
-        dell’utente.
-      </p>
-
-      <p>
-        Le risposte inserite nel modulo vengono trasmesse a Google e possono
-        essere archiviate nell’account Google utilizzato dall’Associazione. Nei
-        moduli verranno richiesti soltanto i dati ragionevolmente necessari per
-        la finalità indicata.
-      </p>
-
-      <p>
-        L’utente non è obbligato ad accedere a un account Google, salvo che ciò
-        sia espressamente previsto dalla configurazione dello specifico modulo.
-      </p>
-
-      <h2>6. Video YouTube</h2>
-
-      <p>
-        Il sito può incorporare video pubblicati su YouTube. Ove tecnicamente
-        possibile, i video vengono incorporati utilizzando la modalità avanzata
-        di tutela della privacy tramite il dominio
-        <code>youtube-nocookie.com</code>.
-      </p>
-
-      <p>
-        I video vengono caricati solamente dopo il consenso dell’utente. Quando
-        il lettore viene caricato o utilizzato, Google e YouTube possono
-        ricevere indirizzo IP, dati tecnici del dispositivo e del browser,
-        informazioni sulla pagina visitata, interazioni con il video ed
-        eventuali cookie o identificativi associati all’utente o al suo account
-        Google.
-      </p>
-
-      <p>
-        La modalità avanzata di tutela della privacy limita l’utilizzo della
-        visualizzazione del video per la personalizzazione dell’esperienza su
-        YouTube, ma non esclude ogni possibile trattamento di dati da parte di
-        Google.
-      </p>
-
-      <h2>7. Modalità del trattamento e sicurezza</h2>
-
-      <p>
-        Il trattamento viene effettuato principalmente con strumenti informatici
-        e telematici, secondo i principi di liceità, correttezza, trasparenza,
-        minimizzazione e limitazione della conservazione.
-      </p>
-
-      <p>
-        Il Titolare adotta misure tecniche e organizzative adeguate per
-        proteggere i dati da perdita, uso illecito, accesso non autorizzato,
-        modifica o divulgazione.
-      </p>
-
-      <p>
-        Nonostante le misure adottate, nessuna trasmissione o conservazione di
-        dati tramite Internet può essere considerata completamente priva di
-        rischi.
-      </p>
-
-      <h2>8. Fornitori e destinatari</h2>
-
-      <p>
-        I dati possono essere trattati o comunicati, limitatamente a quanto
-        necessario, alle seguenti categorie di soggetti:
-      </p>
-
       <ul>
-        <li>
-          <strong>Cloudflare, Inc.</strong>, per Cloudflare Pages, distribuzione
-          dei contenuti, protezione della rete e Cloudflare Access;
-        </li>
-        <li>
-          <strong>Google Ireland Limited e società del gruppo Google</strong>,
-          per Google Analytics 4, Google Forms, YouTube e gli
-          eventuali servizi Google collegati;
-        </li>
-        <li>
-          fornitori dei servizi di posta elettronica utilizzati
-          dall’Associazione;
-        </li>
-        <li>
-          tecnici e fornitori informatici incaricati della manutenzione del
-          sito;
-        </li>
-        <li>
-          consulenti amministrativi, fiscali o legali, quando necessario;
-        </li>
-        <li>
-          autorità pubbliche o giudiziarie, nei casi previsti dalla legge.
-        </li>
+        <li><strong>Cloudflare, Inc.</strong>, per Pages, CDN, sicurezza, Turnstile e statistiche HTTP;</li>
+        <li><strong>Resend</strong>, per l’invio transazionale dei messaggi generati dal modulo e dei report tecnici;</li>
+        <li><strong>Mailgun Technologies, Inc.</strong>, per la ricezione e l’inoltro della posta destinata al dominio;</li>
+        <li><strong>Google Ireland Limited e società del gruppo Google</strong>, per la casella Gmail di destinazione;</li>
+        <li>fornitori tecnici, consulenti e autorità, quando necessario o previsto dalla legge.</li>
+      </ul>
+      <p>
+        I soggetti operano, secondo il ruolo effettivo, come responsabili, titolari
+        autonomi o persone autorizzate. I dati non vengono venduti né utilizzati
+        dall’Associazione per pubblicità comportamentale.
+      </p>
+
+      <h2>6. Trasferimenti internazionali</h2>
+      <p>
+        Alcuni fornitori appartengono a gruppi con sede o infrastrutture anche fuori
+        dallo Spazio economico europeo. Gli eventuali trasferimenti avvengono mediante
+        gli strumenti previsti dal GDPR, incluse decisioni di adeguatezza, EU-U.S.
+        Data Privacy Framework quando applicabile e Clausole contrattuali standard.
+      </p>
+      <ul>
+        <li><a href="https://www.cloudflare.com/it-it/privacypolicy/" target="_blank" rel="noopener noreferrer">Privacy Cloudflare</a></li>
+        <li><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Resend</a></li>
+        <li><a href="https://www.mailgun.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Mailgun</a></li>
+        <li><a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener noreferrer">Privacy Google</a></li>
       </ul>
 
-      <p>
-        Tali soggetti trattano i dati in qualità di responsabili del trattamento,
-        titolari autonomi o persone autorizzate, secondo il ruolo effettivamente
-        ricoperto e la normativa applicabile.
-      </p>
-
-      <p>
-        I dati personali non vengono venduti, diffusi pubblicamente o comunicati
-        a terzi per finalità commerciali proprie dell’Associazione.
-      </p>
-
-      <h2>9. Utilizzo di GitHub</h2>
-
-      <p>
-        Il codice sorgente del sito e le procedure tecniche di pubblicazione
-        possono essere gestiti tramite GitHub, servizio fornito da GitHub, Inc.
-      </p>
-
-      <p>
-        Normalmente GitHub tratta dati relativi agli amministratori e agli
-        sviluppatori del sito e informazioni tecniche riguardanti codice,
-        modifiche e operazioni di pubblicazione. I visitatori del sito
-        pubblicato tramite Cloudflare Pages non interagiscono direttamente con
-        GitHub e i loro dati di navigazione non vengono inviati a GitHub per il
-        solo fatto di visitare il sito.
-      </p>
-
-      <p>
-        Informativa GitHub:
-        <a
-          href="https://docs.github.com/it/site-policy/privacy-policies/github-general-privacy-statement"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub General Privacy Statement
-        </a>.
-      </p>
-
-      <h2>10. Trasferimenti internazionali</h2>
-
-      <p>
-        Alcuni fornitori, tra cui Cloudflare, Google e GitHub, appartengono a
-        gruppi societari con sede o infrastrutture anche al di fuori dello Spazio
-        economico europeo.
-      </p>
-
-      <p>
-        Gli eventuali trasferimenti internazionali avvengono sulla base degli
-        strumenti previsti dal GDPR, tra cui decisioni di adeguatezza della
-        Commissione europea, EU-U.S. Data Privacy Framework quando applicabile,
-        Clausole contrattuali standard e ulteriori misure contrattuali, tecniche
-        e organizzative.
-      </p>
-
-      <p>
-        Informazioni sulle garanzie adottate possono essere richieste al Titolare
-        scrivendo a
-        <a href="mailto:info@selfdefensesondrio.it">
-          info@selfdefensesondrio.it
-        </a>.
-      </p>
-
+      <h2>7. Conservazione</h2>
       <ul>
-        <li>
-          <a
-            href="https://www.cloudflare.com/privacypolicy/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Informativa privacy Cloudflare
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.cloudflare.com/cloudflare-customer-dpa/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Data Processing Addendum Cloudflare
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://policies.google.com/privacy?hl=it"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Informativa privacy Google
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://business.safety.google/adsprocessorterms/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Termini di trattamento dei dati Google
-          </a>
-        </li>
+        <li><strong>Richieste e comunicazioni:</strong> per il tempo necessario alla gestione e, salvo ulteriori necessità, fino a 12 mesi dalla conclusione della comunicazione.</li>
+        <li><strong>Dati amministrativi o contabili:</strong> per i periodi previsti dalla legge, normalmente fino a 10 anni.</li>
+        <li><strong>Log tecnici, sicurezza e Turnstile:</strong> secondo la configurazione dei servizi e per il tempo necessario a prevenire abusi e diagnosticare problemi.</li>
+        <li><strong>Report statistici:</strong> contengono conteggi aggregati per dominio e possono essere conservati nella casella email per confronti storici.</li>
       </ul>
-
-      <h2>11. Conservazione dei dati</h2>
-
-      <ul>
-        <li>
-          <strong>Richieste tramite email:</strong> per il tempo necessario a
-          gestire la richiesta e, salvo ulteriori necessità, per un massimo di
-          12 mesi dalla conclusione della comunicazione.
-        </li>
-        <li>
-          <strong>Risposte a Google Forms:</strong> per il tempo necessario a
-          gestire la richiesta, iscrizione o attività e, salvo obblighi legali,
-          per un massimo di 24 mesi dalla conclusione dell’attività cui si
-          riferiscono.
-        </li>
-        <li>
-          <strong>Dati amministrativi e contabili:</strong> per i periodi
-          previsti dalla legge, normalmente fino a 10 anni.
-        </li>
-        <li>
-          <strong>Google Analytics 4:</strong> i dati a livello di utente ed
-          evento sono conservati per 14 mesi, secondo la configurazione della
-          proprietà Analytics. I rapporti statistici aggregati possono essere
-          disponibili più a lungo senza permettere l’identificazione diretta
-          dell’utente.
-        </li>
-        <li>
-          <strong>Log tecnici e di sicurezza:</strong> per il periodo previsto
-          dalla configurazione dei servizi e per quanto necessario a garantire
-          sicurezza e prevenire abusi.
-        </li>
-        <li>
-          <strong>Statistiche anonime giornaliere:</strong> gli identificativi
-          tecnici cifrati utilizzati per evitare conteggi duplicati sono
-          conservati per un massimo di 35 giorni e poi eliminati.
-        </li>
-        <li>
-          <strong>Log Cloudflare Access:</strong> secondo i tempi previsti dal
-          servizio e dalla configurazione dell’account, salvo ulteriore
-          conservazione necessaria per indagare su un incidente o tutelare un
-          diritto.
-        </li>
-      </ul>
-
       <p>
-        Al termine dei periodi applicabili, i dati vengono cancellati o resi
-        anonimi, salvo obblighi di ulteriore conservazione o necessità di
-        accertamento, esercizio o difesa di un diritto.
+        Scaduti i periodi applicabili, i dati vengono cancellati o resi anonimi,
+        salvo obblighi di legge o necessità di tutela di un diritto.
       </p>
 
-      <h2>12. Cookie e strumenti di tracciamento</h2>
-
-      <h3>12.1 Cookie tecnici</h3>
-
+      <h2>8. Cookie e servizi esterni</h2>
       <p>
-        Il sito utilizza cookie e strumenti tecnici strettamente necessari per:
+        Il sito non utilizza cookie analitici, pubblicitari o di profilazione e non
+        incorpora Google Forms o video YouTube. Utilizza soltanto strumenti tecnici
+        di Cloudflare e Turnstile necessari alla sicurezza e al modulo contatti.
+        Per maggiori dettagli consulta la <a href="/cookie-policy">Cookie Policy</a>.
+      </p>
+      <p>
+        I collegamenti a WhatsApp, Facebook, Instagram e altri siti esterni vengono
+        attivati soltanto quando l’utente decide di visitarli. Da quel momento si
+        applicano le informative del servizio di destinazione.
       </p>
 
-      <ul>
-        <li>fornire e distribuire in sicurezza le pagine;</li>
-        <li>proteggere il sito da traffico illecito o dannoso;</li>
-        <li>gestire l’autenticazione tramite Cloudflare Access;</li>
-        <li>mantenere la sessione degli utenti autorizzati;</li>
-        <li>memorizzare le preferenze espresse nel banner cookie.</li>
-      </ul>
-
+      <h2>9. Decisioni automatizzate</h2>
       <p>
-        Questi strumenti sono necessari al funzionamento e alla sicurezza del
-        sito e non richiedono il consenso dell’utente.
+        Non vengono svolte attività di profilazione o decisioni automatizzate che
+        producano effetti giuridici o analogamente significativi. Turnstile valuta
+        automaticamente segnali tecnici esclusivamente per stabilire se accettare
+        l’invio del modulo come richiesta presumibilmente legittima.
       </p>
 
-      <h3>12.2 Statistiche anonime senza cookie</h3>
-
+      <h2>10. Diritti dell’interessato</h2>
       <p>
-        Il sito produce un conteggio statistico giornaliero distinto per dominio
-        senza installare cookie nel browser. Per evitare conteggi duplicati,
-        indirizzo IP e user agent vengono combinati con una chiave riservata e
-        trasformati immediatamente in un codice crittografico non reversibile.
-        Il dato grezzo non viene memorizzato e il codice cambia ogni giorno.
+        Nei casi previsti dagli articoli 15–22 del GDPR, l’interessato può chiedere
+        accesso, rettifica, cancellazione, limitazione, portabilità, oppure opporsi
+        ai trattamenti basati sul legittimo interesse. Le richieste possono essere
+        inviate a <a href="mailto:info@selfdefensesondrio.it">info@selfdefensesondrio.it</a>.
+      </p>
+      <p>
+        È inoltre possibile proporre reclamo al
+        <a href="https://www.garanteprivacy.it/" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali</a>.
       </p>
 
-      <h3>12.3 Cookie analitici</h3>
-
+      <h2>11. Modifiche all’informativa</h2>
       <p>
-        Previo consenso, il sito utilizza Google Analytics 4 per produrre
-        statistiche sull’utilizzo delle pagine. Il servizio può utilizzare
-        cookie quali:
-      </p>
-
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Cookie</th>
-              <th>Finalità</th>
-              <th>Durata indicativa</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>_ga</code></td>
-              <td>
-                Distingue in modo pseudonimo i visitatori e misura l’utilizzo
-                del sito.
-              </td>
-              <td>Fino a 2 anni.</td>
-            </tr>
-            <tr>
-              <td><code>_ga_&lt;ID&gt;</code></td>
-              <td>Mantiene e conta le sessioni di navigazione.</td>
-              <td>Fino a 2 anni.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p>
-        I cookie analitici e il codice di Google Analytics vengono attivati
-        solamente dopo il consenso.
-      </p>
-
-      <h3>12.4 Cookie e strumenti di contenuti esterni</h3>
-
-      <p>
-        YouTube e Google Forms possono utilizzare cookie,
-        identificatori e memorie locali necessari a fornire le proprie
-        funzionalità, prevenire abusi, misurare l’utilizzo e, in base alle
-        impostazioni dell’utente e del suo account Google, personalizzare
-        contenuti o servizi.
-      </p>
-
-      <p>
-        Nomi e durata di questi cookie possono cambiare in base al servizio,
-        alle impostazioni di Google, allo stato di accesso dell’utente e alle
-        funzionalità utilizzate. Per informazioni aggiornate:
-      </p>
-
-      <ul>
-        <li>
-          <a
-            href="https://policies.google.com/technologies/cookies?hl=it"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Come Google utilizza i cookie
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://policies.google.com/technologies/partner-sites?hl=it"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Utilizzo dei dati sui siti che usano servizi Google
-          </a>
-        </li>
-      </ul>
-
-      <h3>12.5 Gestione del consenso</h3>
-
-      <p>
-        Al primo accesso il sito presenta un banner che permette di:
-      </p>
-
-      <ul>
-        <li>accettare tutti gli strumenti facoltativi;</li>
-        <li>rifiutare tutti gli strumenti facoltativi;</li>
-        <li>scegliere separatamente le categorie desiderate;</li>
-        <li>proseguire utilizzando esclusivamente strumenti tecnici;</li>
-        <li>modificare o revocare successivamente il consenso.</li>
-      </ul>
-
-      <p>
-        In assenza di consenso, Google Analytics non viene attivato e i
-        contenuti YouTube e Google Forms incorporati restano
-        bloccati.
-      </p>
-
-      <p>
-        La revoca del consenso non pregiudica la liceità dei trattamenti
-        effettuati prima della revoca. L’utente può inoltre eliminare i cookie
-        tramite le impostazioni del proprio browser.
-      </p>
-
-      <p>
-        Le preferenze sui cookie possono essere modificate in qualsiasi momento
-        tramite il comando “Rivedi le preferenze cookie” disponibile nel sito.
-      </p>
-
-      <h2>13. Collegamenti esterni</h2>
-
-      <p>
-        Il sito può contenere collegamenti verso siti o servizi gestiti da
-        terzi. Quando l’utente seleziona un collegamento esterno, il trattamento
-        effettuato dal sito di destinazione è disciplinato dalla relativa
-        informativa privacy.
-      </p>
-
-      <p>
-        Il Titolare non controlla le modalità di trattamento adottate dai
-        gestori dei siti esterni.
-      </p>
-
-      <h2>14. Processi decisionali automatizzati</h2>
-
-      <p>
-        Il Titolare non utilizza i dati per processi decisionali automatizzati o
-        attività di profilazione che producano effetti giuridici o incidano in
-        modo analogamente significativo sull’interessato, ai sensi dell’articolo
-        22 del GDPR.
-      </p>
-
-      <p>
-        Le regole di Cloudflare Access verificano automaticamente se
-        l’indirizzo email utilizzato appartiene all’elenco degli utenti
-        autorizzati. La verifica ha esclusivamente la funzione di consentire o
-        negare l’accesso ai contenuti riservati.
-      </p>
-
-      <h2>15. Diritti dell’interessato</h2>
-
-      <p>
-        Nei casi previsti dalla normativa, l’interessato può esercitare i
-        diritti riconosciuti dagli articoli 15–22 del GDPR, tra cui:
-      </p>
-
-      <ul>
-        <li>ottenere conferma dell’esistenza dei propri dati personali;</li>
-        <li>accedere ai dati e riceverne una copia;</li>
-        <li>richiedere la rettifica dei dati inesatti;</li>
-        <li>richiedere la cancellazione dei dati;</li>
-        <li>ottenere la limitazione del trattamento;</li>
-        <li>opporsi al trattamento basato sul legittimo interesse;</li>
-        <li>
-          ricevere i dati in formato strutturato e richiederne la portabilità,
-          quando applicabile;
-        </li>
-        <li>
-          revocare in qualsiasi momento il consenso, senza pregiudicare la
-          liceità del trattamento precedente.
-        </li>
-      </ul>
-
-      <p>
-        Le richieste possono essere inviate a:
-        <a href="mailto:info@selfdefensesondrio.it">
-          info@selfdefensesondrio.it
-        </a>.
-      </p>
-
-      <p>
-        Il Titolare risponderà nei tempi previsti dalla normativa e potrà
-        richiedere le informazioni necessarie a verificare l’identità del
-        richiedente.
-      </p>
-
-      <p>
-        L’interessato può inoltre proporre reclamo al
-        <a
-          href="https://www.garanteprivacy.it/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Garante per la protezione dei dati personali
-        </a>.
-      </p>
-
-      <h2>16. Modifiche all’informativa</h2>
-
-      <p>
-        La presente informativa può essere aggiornata in conseguenza di
-        modifiche normative, organizzative o tecnologiche oppure
-        dell’introduzione di nuovi servizi.
-      </p>
-
-      <p>
-        La versione aggiornata sarà pubblicata su questa pagina con
-        l’indicazione della data dell’ultimo aggiornamento.
-      </p>
-
-      <p class="legal-note">
-        Per informazioni:
-        <a href="mailto:info@selfdefensesondrio.it">
-          info@selfdefensesondrio.it
-        </a>
+        L’informativa può essere aggiornata in seguito a modifiche normative,
+        organizzative o tecnologiche. La data della versione corrente è indicata
+        all’inizio della pagina.
       </p>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .legal {
-    max-width: 920px;
-  }
-
-  .legal h2 {
-    margin-top: 3.5rem;
-    margin-bottom: 1.25rem;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1.05;
-  }
-
-  .legal h3 {
-    margin-top: 2.25rem;
-    margin-bottom: 0.8rem;
-    font-size: 1.35rem;
-  }
-
-  .legal p,
-  .legal li,
-  .legal address,
-  .legal td,
-  .legal th {
-    color: #555;
-    line-height: 1.75;
-  }
-
-  .legal p {
-    margin: 0 0 1.15rem;
-  }
-
-  .legal ul {
-    margin: 0 0 1.5rem;
-    padding-left: 1.4rem;
-  }
-
-  .legal li {
-    margin-bottom: 0.55rem;
-  }
-
-  .legal address {
-    margin-bottom: 1.5rem;
-    font-style: normal;
-  }
-
-  .legal a {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-  }
-
-  .last-update {
-    margin-bottom: 2rem;
-  }
-
-  .table-wrapper {
-    margin: 1.5rem 0 2rem;
-    overflow-x: auto;
-  }
-
-  .legal table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .legal th,
-  .legal td {
-    padding: 1rem;
-    border: 1px solid #d8d8d8;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  .legal th {
-    color: #222;
-    background: #f2f2f2;
-  }
-
-  .legal code {
-    padding: 0.15rem 0.35rem;
-    border-radius: 0.2rem;
-    background: #eeeeee;
-    color: #333;
-  }
-
-  .legal-note {
-    margin-top: 4rem !important;
-    padding-top: 2rem;
-    border-top: 1px solid #d8d8d8;
-  }
-
-  @media (max-width: 640px) {
-    .legal th,
-    .legal td {
-      min-width: 180px;
-      padding: 0.75rem;
-    }
-  }
+  .legal{max-width:920px}
+  .legal h2{margin:3.5rem 0 1.25rem;font-size:clamp(2rem,5vw,3.5rem);line-height:1.05}
+  .legal h3{margin:2rem 0 .8rem;font-size:1.45rem}
+  .legal p,.legal li,.legal address,.legal td,.legal th{color:#555;line-height:1.75}
+  .legal p{margin:0 0 1.15rem}
+  .legal ul{margin:0 0 1.5rem;padding-left:1.4rem}
+  .legal li{margin-bottom:.55rem}
+  .legal address{font-style:normal}
+  .legal a{color:inherit;text-decoration:underline;text-underline-offset:.18em}
+  .last-update{margin-bottom:2rem!important}
+  .table-wrapper{margin:1.5rem 0 2rem;overflow-x:auto}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:1rem;border:1px solid #d8d8d8;text-align:left;vertical-align:top}
+  th{color:#222!important;background:#e8e6e0}
+  @media(max-width:640px){th,td{min-width:190px;padding:.75rem}}
 </style>
