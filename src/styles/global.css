@@ -20,7 +20,6 @@
 html { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
 body { max-width: 100%; margin: 0; overflow-x: hidden; background: var(--ink); color: var(--white); font-family: Manrope, Arial, sans-serif; line-height: 1.65; }
 body.menu-open { overflow: hidden; }
-body.cookie-dialog-open { overflow: hidden; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; }

@@ -3,13 +3,13 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 ---
 
 <div
-  id="cookie-consent"
-  class="cookie-consent"
+  id="sds-privacy-layer"
+  class="sds-privacy-layer"
   data-analytics-id={analyticsId}
   hidden
 >
   <section
-    class="cookie-panel"
+    class="sds-privacy-dialog"
     role="dialog"
     aria-modal="true"
     aria-labelledby="cookie-title"
@@ -61,7 +61,7 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
     const STORAGE_KEY = 'sds-cookie-consent';
     const VERSION = 1;
     const SERVICES = ['analytics', 'forms', 'youtube'];
-    const root = document.getElementById('cookie-consent');
+    const root = document.getElementById('sds-privacy-layer');
     const form = document.getElementById('cookie-form');
     const options = document.getElementById('cookie-options');
     const settingsButton = root?.querySelector('[data-cookie-action="settings"]');
@@ -137,7 +137,6 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 
     const closePanel = () => {
       root.hidden = true;
-      document.body.classList.remove('cookie-dialog-open');
     };
 
     const openPanel = (showOptions = false) => {
@@ -146,7 +145,6 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
       saveButton.hidden = !showOptions;
       settingsButton.hidden = showOptions;
       root.hidden = false;
-      document.body.classList.add('cookie-dialog-open');
       root.querySelector(showOptions ? 'input[name="analytics"]' : '[data-cookie-action="reject"]')?.focus();
     };
 
@@ -186,9 +184,9 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
 </script>
 
 <style>
-  .cookie-consent{position:fixed;inset:0;z-index:1000;display:grid;align-items:end;padding:1rem;background:rgba(0,0,0,.62);backdrop-filter:blur(3px)}
-  .cookie-consent[hidden]{display:none}
-  .cookie-panel{width:min(100%,1120px);max-height:calc(100vh - 2rem);overflow:auto;margin:0 auto;padding:clamp(1.4rem,3vw,2.5rem);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,4rem);background:#f2f0eb;color:#0b0c0d;box-shadow:0 20px 70px rgba(0,0,0,.45)}
+  .sds-privacy-layer{position:fixed;inset:0;z-index:1000;display:grid;align-items:end;padding:1rem;background:rgba(0,0,0,.62);backdrop-filter:blur(3px);pointer-events:none}
+  .sds-privacy-layer[hidden]{display:none}
+  .sds-privacy-dialog{width:min(100%,1120px);max-height:calc(100vh - 2rem);overflow:auto;margin:0 auto;padding:clamp(1.4rem,3vw,2.5rem);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,4rem);background:#f2f0eb;color:#0b0c0d;box-shadow:0 20px 70px rgba(0,0,0,.45);pointer-events:auto}
   .cookie-kicker{margin:0 0 .5rem;color:var(--red);font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
   .cookie-summary h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1rem}
   .cookie-summary p{color:#454542}
@@ -206,5 +204,5 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
   .cookie-button.secondary{background:transparent;color:#0b0c0d}
   .cookie-button.primary{background:var(--red);border-color:var(--red);color:#fff}
   .cookie-button:hover{filter:brightness(.88)}
-  @media(max-width:760px){.cookie-consent{padding:0}.cookie-panel{max-height:100svh;grid-template-columns:1fr}.cookie-actions{justify-content:stretch}.cookie-button{flex:1 1 45%}}
+  @media(max-width:760px){.sds-privacy-layer{padding:0}.sds-privacy-dialog{max-height:100svh;grid-template-columns:1fr}.cookie-actions{justify-content:stretch}.cookie-button{flex:1 1 45%}}
 </style>
