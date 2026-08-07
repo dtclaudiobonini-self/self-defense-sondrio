@@ -13,6 +13,7 @@
   --muted: #aaa9a5;
   --line: rgba(255,255,255,.14);
   --red: #d71920;
+  --red-on-dark: #ff5a5f;
   --red-dark: #ad1117;
   --max: 1240px;
 }
@@ -31,7 +32,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .section { padding: clamp(5rem, 9vw, 9rem) 0; }
 .section-light { background: var(--paper); color: var(--ink); }
 .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; margin-bottom: 3rem; }
-.eyebrow { display: flex; align-items: center; gap: .7rem; margin: 0 0 1rem; color: var(--red); font-size: .73rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.eyebrow { display: flex; align-items: center; gap: .7rem; margin: 0 0 1rem; color: var(--red-on-dark); font-size: .73rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 .eyebrow::before { content: ''; width: 2rem; height: 2px; background: currentColor; }
 h1,h2,h3 { max-width: 100%; margin: 0; font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; line-height: .92; text-transform: uppercase; letter-spacing: -.025em; }
 h1,h2,h3,h4,h5,h6 { overflow-wrap: normal; word-break: normal; -webkit-hyphens: none; hyphens: none; }
@@ -51,8 +52,9 @@ p { margin: 0 0 1.2rem; font-size: 1.0625rem; }
 .card-number { color: var(--red); font: 700 1rem 'Barlow Condensed'; }
 .card h3 { margin: auto 0 1rem; }
 .card p { color: #565653; }
-.text-link { width: fit-content; margin-top: 1rem; color: var(--red); font-weight: 800; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+.text-link { width: fit-content; margin-top: 1rem; color: var(--red-on-dark); font-weight: 800; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
 .text-link:hover { text-decoration: underline; }
+.section-light .eyebrow, .section-light .text-link { color: var(--red); }
 .page-hero { padding: 10rem 0 5rem; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 80% 10%, rgba(215,25,32,.18), transparent 30%); }
 .page-hero h1 { max-width: 980px; }
 .page-hero .lead { margin-top: 1.7rem; }
