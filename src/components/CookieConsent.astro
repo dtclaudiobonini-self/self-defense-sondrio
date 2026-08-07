@@ -12,13 +12,13 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
     class="sds-privacy-dialog"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="cookie-title"
-    aria-describedby="cookie-description"
+    aria-labelledby="sds-privacy-title"
+    aria-describedby="sds-privacy-description"
   >
-    <div class="cookie-summary">
-      <p class="cookie-kicker">La tua privacy</p>
-      <h2 id="cookie-title">Preferenze cookie</h2>
-      <p id="cookie-description">
+    <div class="sds-privacy-summary">
+      <p class="sds-privacy-kicker">La tua privacy</p>
+      <h2 id="sds-privacy-title">Preferenze cookie</h2>
+      <p id="sds-privacy-description">
         Usiamo strumenti tecnici necessari, incluso Cloudflare Turnstile. Con il
         tuo consenso possiamo attivare statistiche e contenuti Google esterni.
         Se rifiuti, il sito resta utilizzabile.
@@ -26,31 +26,31 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
       <a href="/privacy">Leggi la Privacy e Cookie Policy</a>
     </div>
 
-    <form id="cookie-form" class="cookie-form">
-      <div class="cookie-options" id="cookie-options" hidden>
-        <div class="cookie-option">
+    <form id="sds-privacy-form" class="sds-privacy-form">
+      <div class="sds-privacy-options" id="sds-privacy-options" hidden>
+        <div class="sds-privacy-option">
           <span><strong>Necessari</strong><small>Sicurezza, consenso e Turnstile</small></span>
-          <span class="always-on">Sempre attivi</span>
+          <span class="sds-privacy-always">Sempre attivi</span>
         </div>
-        <label class="cookie-option">
+        <label class="sds-privacy-option">
           <span><strong>Google Analytics</strong><small>Statistiche anonime sull’uso del sito</small></span>
           <input type="checkbox" name="analytics" />
         </label>
-        <label class="cookie-option">
+        <label class="sds-privacy-option">
           <span><strong>Google Forms</strong><small>Moduli incorporati nelle pagine</small></span>
           <input type="checkbox" name="forms" />
         </label>
-        <label class="cookie-option">
+        <label class="sds-privacy-option">
           <span><strong>YouTube</strong><small>Video incorporati nelle pagine</small></span>
           <input type="checkbox" name="youtube" />
         </label>
       </div>
 
-      <div class="cookie-actions">
-        <button type="button" class="cookie-button secondary" data-cookie-action="reject">Rifiuta tutto</button>
-        <button type="button" class="cookie-button secondary" data-cookie-action="settings">Personalizza</button>
-        <button type="submit" class="cookie-button secondary save" hidden>Salva preferenze</button>
-        <button type="button" class="cookie-button primary" data-cookie-action="accept">Accetta tutto</button>
+      <div class="sds-privacy-actions">
+        <button type="button" class="sds-privacy-button secondary" data-sds-privacy-action="reject">Rifiuta tutto</button>
+        <button type="button" class="sds-privacy-button secondary" data-sds-privacy-action="settings">Personalizza</button>
+        <button type="submit" class="sds-privacy-button secondary sds-privacy-save" hidden>Salva preferenze</button>
+        <button type="button" class="sds-privacy-button primary" data-sds-privacy-action="accept">Accetta tutto</button>
       </div>
     </form>
   </section>
@@ -62,10 +62,10 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
     const VERSION = 1;
     const SERVICES = ['analytics', 'forms', 'youtube'];
     const root = document.getElementById('sds-privacy-layer');
-    const form = document.getElementById('cookie-form');
-    const options = document.getElementById('cookie-options');
-    const settingsButton = root?.querySelector('[data-cookie-action="settings"]');
-    const saveButton = root?.querySelector('.save');
+    const form = document.getElementById('sds-privacy-form');
+    const options = document.getElementById('sds-privacy-options');
+    const settingsButton = root?.querySelector('[data-sds-privacy-action="settings"]');
+    const saveButton = root?.querySelector('.sds-privacy-save');
     let preferences = null;
 
     const blankPreferences = (value = false) =>
@@ -145,7 +145,7 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
       saveButton.hidden = !showOptions;
       settingsButton.hidden = showOptions;
       root.hidden = false;
-      root.querySelector(showOptions ? 'input[name="analytics"]' : '[data-cookie-action="reject"]')?.focus();
+      root.querySelector(showOptions ? 'input[name="analytics"]' : '[data-sds-privacy-action="reject"]')?.focus();
     };
 
     const save = (nextPreferences) => {
@@ -158,7 +158,7 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
     };
 
     root?.addEventListener('click', (event) => {
-      const action = event.target.closest('[data-cookie-action]')?.dataset.cookieAction;
+      const action = event.target.closest('[data-sds-privacy-action]')?.dataset.sdsPrivacyAction;
       if (action === 'accept') save(blankPreferences(true));
       if (action === 'reject') save(blankPreferences(false));
       if (action === 'settings') openPanel(true);
@@ -170,7 +170,7 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
     });
 
     document.addEventListener('click', (event) => {
-      if (event.target.closest('[data-cookie-review]')) {
+      if (event.target.closest('[data-sds-privacy-review]')) {
         event.preventDefault();
         openPanel(true);
       }
@@ -187,22 +187,22 @@ const analyticsId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID;
   .sds-privacy-layer{position:fixed;inset:0;z-index:1000;display:grid;align-items:end;padding:1rem;background:rgba(0,0,0,.62);backdrop-filter:blur(3px);pointer-events:none}
   .sds-privacy-layer[hidden]{display:none}
   .sds-privacy-dialog{width:min(100%,1120px);max-height:calc(100vh - 2rem);overflow:auto;margin:0 auto;padding:clamp(1.4rem,3vw,2.5rem);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,4rem);background:#f2f0eb;color:#0b0c0d;box-shadow:0 20px 70px rgba(0,0,0,.45);pointer-events:auto}
-  .cookie-kicker{margin:0 0 .5rem;color:var(--red);font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
-  .cookie-summary h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1rem}
-  .cookie-summary p{color:#454542}
-  .cookie-summary a{font-size:.82rem;font-weight:800;color:#951017}
-  .cookie-form{display:flex;flex-direction:column;justify-content:flex-end}
-  .cookie-options{border-top:1px solid #c8c5be;margin-bottom:1.5rem}
-  .cookie-option{min-height:62px;padding:.7rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;border-bottom:1px solid #c8c5be;cursor:pointer}
-  .cookie-option span:first-child{display:grid}
-  .cookie-option strong{font-size:.86rem}
-  .cookie-option small{color:#666;font-size:.72rem}
-  .cookie-option input{width:1.35rem;height:1.35rem;accent-color:var(--red)}
-  .always-on{color:#555;font-size:.68rem;font-weight:800;text-transform:uppercase;white-space:nowrap}
-  .cookie-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.65rem}
-  .cookie-button{min-height:45px;padding:.7rem 1rem;border:1px solid #0b0c0d;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
-  .cookie-button.secondary{background:transparent;color:#0b0c0d}
-  .cookie-button.primary{background:var(--red);border-color:var(--red);color:#fff}
-  .cookie-button:hover{filter:brightness(.88)}
-  @media(max-width:760px){.sds-privacy-layer{padding:0}.sds-privacy-dialog{max-height:100svh;grid-template-columns:1fr}.cookie-actions{justify-content:stretch}.cookie-button{flex:1 1 45%}}
+  .sds-privacy-kicker{margin:0 0 .5rem;color:var(--red);font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+  .sds-privacy-summary h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1rem}
+  .sds-privacy-summary p{color:#454542}
+  .sds-privacy-summary a{font-size:.82rem;font-weight:800;color:#951017}
+  .sds-privacy-form{display:flex;flex-direction:column;justify-content:flex-end}
+  .sds-privacy-options{border-top:1px solid #c8c5be;margin-bottom:1.5rem}
+  .sds-privacy-option{min-height:62px;padding:.7rem 0;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;border-bottom:1px solid #c8c5be;cursor:pointer}
+  .sds-privacy-option span:first-child{display:grid}
+  .sds-privacy-option strong{font-size:.86rem}
+  .sds-privacy-option small{color:#666;font-size:.72rem}
+  .sds-privacy-option input{width:1.35rem;height:1.35rem;accent-color:var(--red)}
+  .sds-privacy-always{color:#555;font-size:.68rem;font-weight:800;text-transform:uppercase;white-space:nowrap}
+  .sds-privacy-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.65rem}
+  .sds-privacy-button{min-height:45px;padding:.7rem 1rem;border:1px solid #0b0c0d;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+  .sds-privacy-button.secondary{background:transparent;color:#0b0c0d}
+  .sds-privacy-button.primary{background:var(--red);border-color:var(--red);color:#fff}
+  .sds-privacy-button:hover{filter:brightness(.88)}
+  @media(max-width:760px){.sds-privacy-layer{padding:0}.sds-privacy-dialog{max-height:100svh;grid-template-columns:1fr}.sds-privacy-actions{justify-content:stretch}.sds-privacy-button{flex:1 1 45%}}
 </style>
